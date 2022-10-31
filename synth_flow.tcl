@@ -15,4 +15,5 @@ source [ file join $STAGES init_libraries.tcl ]
 source [ file join $STAGES load_hdl.tcl ]
 
 # Read design constraints (from script searchpath)
+#read_sdc $ROOT/test2.sdc
 #read_sdc { constraints/timing.sdc }
