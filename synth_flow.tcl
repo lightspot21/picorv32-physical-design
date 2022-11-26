@@ -22,12 +22,6 @@ source [ file join $STAGES load_hdl.tcl ]
 # Declare timing constraints
 source [ file join $STAGES make_sdc.tcl]
 
-# Export constraint settings to SDC
-# (Possibly write_sdc/read_sdc is not needed,
-# need to ask)
-#write_sdc > $SCRIPTS/constraints/timing.sdc
-#read_sdc { constraints/timing.sdc }
-
 # Check if timing constraints are complete
 check_timing_intent
 
