@@ -25,7 +25,18 @@ add_rings -nets {VDD VSS} -type core_rings -follow core \
  -center 1 -threshold 0
 
 add_stripes -nets {VDD VSS} -layer Metal1 \
- -direction horizontal \
+ -direction vertical \
  -width 3 -spacing 3 -number_of_sets 3
 
+connect_global_net VDD -type pg_pin -pin_base_name VDD -all
+connect_global_net VDD -type tie_hi -inst_base_name *
 
+
+connect_global_net VSS -type pg_pin -pin_base_name VSS -all
+connect_global_net VSS -type tie_lo -inst_base_name *
+
+create_pg_pin -name VDD -net VDD -geom Metal1 0 9 12 18
+create_pg_pin -name VSS -net VSS -geom Metal1 0 201.8 8 218.8
+
+# TODO add one more via?
+#update_power_vias -add_vias 1 -top_layer Metal1 -bottom_layer Metal2 -area {10 16 11 17}
