@@ -33,14 +33,18 @@ check_timing_intent
 
 # If we're ok after all these, synthesize!
 # (with optimizations too)
+# TODO: add Logic Equivalence Checking (LEC) steps
+# in the flow between elaboration+generic+map+opt
 syn_generic
 syn_map
 syn_opt
 
 # Export reports
 report_area > $OUT_RPT/area.txt
+report_power > $OUT_RPT/power.txt
 report_timing > $OUT_RPT/timing.txt
 report_gates > $OUT_RPT/gates.txt
+report_qor > $OUT_RPT/qor.txt
 
 # Export final design+constraints used
 write_hdl > $OUT_DSN/design.v
