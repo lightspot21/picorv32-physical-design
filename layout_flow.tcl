@@ -1,12 +1,11 @@
 source ./global_vars.tcl
 
-if { ![is_common_ui_mode] } {
-    error "Run this script with Stylus. 'innovus -stylus -files <script.tcl>"
-}
+# Prepare Innovus with Genus exported design
+source $INTERM_GENUS_INV/picorv32.invs_setup.tcl
 
-read_mmmc $INTERM_GENUS_INV/genus.mmmc.tcl
-read_physical -lef { $LIB_ROOT/lef/gsclib045_tech.lef $LIB_ROOT/lef/gsclib045_macro.lef }
+# Set up floorplan
+# (aspect ratio 1, core util 75%, 15 micron
+# margin all sides for I/O)
+#
+create_floorplan -site CoreSite -core_density_size 1 0.75 15 15 15 15
 
-read_netlist $INTERM_GENUS_INV/genus.v
-
-init_design
