@@ -6,9 +6,12 @@ set DATA $ROOT/data
 set SCRIPTS $ROOT/scripts
 set STAGES $SCRIPTS/stages
 set OUTPUT $ROOT/out
-set OUT_DSN $OUTPUT/design
-set OUT_INN $OUTPUT/innovus
 set OUT_RPT $OUTPUT/reports
+
+# Intermediate files used between flows
+set OUTPUT_INTER $OUTPUT/intermediate
+set OUT_DSN $OUTPUT_INTER/design
+set OUT_GEN $OUTPUT_INTER/genus_to_innovus
 
 # Set paths for scripts, Verilog files and library root
 set_db init_lib_search_path $LIB_ROOT
@@ -46,4 +49,4 @@ write_sdc > $OUT_DSN/constraints.sdc
 
 # Export final design files for Innovus
 write_design -innovus picorv32
-file rename ./genus_invs_des $OUT_INN
+file rename ./genus_invs_des $OUT_GEN
