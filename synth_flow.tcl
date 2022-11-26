@@ -44,5 +44,4 @@ write_hdl > $SYNTH_INTERM_DSN/design.v
 write_sdc > $SYNTH_INTERM_DSN/constraints.sdc
 
 # Export final design files for Innovus
-write_design -innovus picorv32
-file rename ./genus_invs_des $INTERM_GENUS_INV
+write_design -base_name $INTERM_GENUS_INV/picorv32 -innovus picorv32
