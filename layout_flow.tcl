@@ -31,9 +31,13 @@ source [ file join $LAYOUT_SCRIPTS create_pdn.tcl ]
 # Perform cell placement
 source [ file join $LAYOUT_SCRIPTS configure_placement.tcl ]
 
-# Place design (no opts)
+# Place design 
+# Note to self: plain place_design => -1.blabla slack
+# but opt_design => +6.kati slack. plain place puts cells
+# too far away from each other while opt packs them
+# as close as possible
 place_design
-opt_design
+#opt_design
 
 # Early power rail analysis
 source [ file join $LAYOUT_SCRIPTS early_power_rail.tcl ]
