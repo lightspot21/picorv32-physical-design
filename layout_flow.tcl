@@ -1,6 +1,11 @@
+# Get global settings
 source ./global_vars.tcl
 
+# Set script+report directories
 set LAYOUT_SCRIPTS $SCRIPTS/layout
+set LAYOUT_REPORTS $OUTPUT/layout-reports
+
+# Intermediate files output
 set LAYOUT_INTERM  $INTERMEDIATE/layout
 
 # Prepare Innovus with Genus exported design
