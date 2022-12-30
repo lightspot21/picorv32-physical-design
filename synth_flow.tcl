@@ -7,7 +7,6 @@ set SYNTH_REPORTS $OUTPUT/synth-reports
 
 # Intermediate files used between flows
 set SYNTH_INTERM $INTERMEDIATE/synth
-set SYNTH_INTERM_DSN $SYNTH_INTERM/design
 
 # Set paths for scripts, Verilog files and library root
 set_db init_lib_search_path $LIB_ROOT
@@ -40,8 +39,8 @@ report_gates > $SYNTH_REPORTS/gates.txt
 report_qor > $SYNTH_REPORTS/qor.txt
 
 # Export final design+constraints used
-write_hdl > $SYNTH_INTERM_DSN/design.v
-write_sdc > $SYNTH_INTERM_DSN/constraints.sdc
+write_hdl > $SYNTH_INTERM/design/design.v
+write_sdc > $SYNTH_INTERM/design/constraints.sdc
 
 # Export final design files for Innovus
 write_design -base_name $INTERM_GENUS_INV/picorv32 -innovus picorv32
