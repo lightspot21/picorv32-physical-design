@@ -36,8 +36,15 @@ source [ file join $LAYOUT_SCRIPTS configure_placement.tcl ]
 # but opt_design => +6.kati slack. plain place puts cells
 # too far away from each other while opt packs them
 # as close as possible
-place_design
-#opt_design
+#place_design
+opt_design
 
-# Early power rail analysis
-source [ file join $LAYOUT_SCRIPTS early_power_rail.tcl ]
+# Generate reports
+report_area > $LAYOUT_REPORTS/area.txt
+report_power > $LAYOUT_REPORTS/power.txt
+report_timing > $LAYOUT_REPORTS/timing.txt
+report_gates > $LAYOUT_REPORTS/gates.txt
+report_qor > $LAYOUT_REPORTS/qor.txt
+
+# Early power rail analysis (not automateable)
+#source [ file join $LAYOUT_SCRIPTS early_power_rail.tcl ]
