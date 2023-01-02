@@ -37,7 +37,12 @@ source [ file join $LAYOUT_SCRIPTS configure_placement.tcl ]
 # too far away from each other while opt packs them
 # as close as possible
 #place_design
-opt_design
+#opt_design
+# or at the same time:
+place_opt_design
+
+# Check placement
+check_place
 
 # Generate reports
 report_area > $LAYOUT_REPORTS/area.txt
@@ -48,3 +53,6 @@ report_qor > $LAYOUT_REPORTS/qor.txt
 
 # Early power rail analysis (not automateable)
 #source [ file join $LAYOUT_SCRIPTS early_power_rail.tcl ]
+
+# Early global route
+source [ file join $LAYOUT_SCRIPTS early_global_route.tcl ]
