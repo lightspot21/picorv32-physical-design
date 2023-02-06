@@ -48,11 +48,11 @@ check_place
 report_area > $LAYOUT_REPORTS/area.txt
 report_power > $LAYOUT_REPORTS/power.txt
 report_timing > $LAYOUT_REPORTS/timing.txt
-report_gates > $LAYOUT_REPORTS/gates.txt
-report_qor > $LAYOUT_REPORTS/qor.txt
+report_gate_count -out_file $LAYOUT_REPORTS/gates.txt
+report_qor -format text -file $LAYOUT_REPORTS/qor.txt
 
-# Early power rail analysis (not automateable)
-#source [ file join $LAYOUT_SCRIPTS early_power_rail.tcl ]
+# Early power rail analysis
+source [ file join $LAYOUT_SCRIPTS early_power_rail.tcl ]
 
 # Early global route
-source [ file join $LAYOUT_SCRIPTS early_global_route.tcl ]
+#source [ file join $LAYOUT_SCRIPTS early_global_route.tcl ]
