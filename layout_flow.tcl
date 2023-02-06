@@ -70,10 +70,43 @@ report_gate_count -out_file $LAYOUT_REPORTS/gates_postcts.txt
 report_qor -format text -file $LAYOUT_REPORTS/qor_postcts.txt
 
 # Commence final detailed routing
+# (layers 1-11, high effort on vias, timing+SI driven)
 set_db route_design_top_routing_layer 11
 set_db route_design_bottom_routing_layer 1
+set_db route_design_concurrent_minimize_via_count_effort high
+set_db route_design_detail_fix_antenna true
 set_db route_design_with_timing_driven true
 set_db route_design_with_si_driven true
+
 route_design -global_detail -via_opt
 
+report_area > $LAYOUT_REPORTS/area_postroute.txt
+report_power > $LAYOUT_REPORTS/power_postroute.txt
+report_timing > $LAYOUT_REPORTS/timing_postroute.txt
+report_gate_count -out_file $LAYOUT_REPORTS/gates_postroute.txt
+report_qor -format text -file $LAYOUT_REPORTS/qor_postroute.txt
 
+# Run DRC+connectivity checks
+set_db check_drc_disable_rules {}
+set_db check_drc_implant true
+set_db check_drc_implant_across_rows false
+set_db check_drc_ndr_spacing false
+set_db check_drc_check_only default
+set_db check_drc_inside_via_def false
+set_db check_drc_exclude_pg_net false
+set_db check_drc_ignore_trial_route false
+set_db check_drc_use_min_spacing_on_block_obs auto
+set_db check_drc_report $LAYOUT_REPORTS/picorv32.drc.rpt
+set_db check_drc_limit 1000
+
+check_drc
+check_connectivity -type all
+
+# Fill unused space with metal
+set_metal_fill -layer { Metal1 Metal2 Metal3 Metal4 Metal5 Metal6 Metal7 Metal8 Metal9 Metal10 Metal11 } -opc_active_spacing 0.200 -min_density 10.00
+add_metal_fill -layer { Metal1 Metal2 Metal3 Metal4 Metal5 Metal6 Metal7 Metal8 Metal9 Metal10 Metal11 } -nets { VSS VDD }
+
+#
+#set_db extract_rc_engine post_route
+#set_db extract_rc_effort_level signoff
+#set_db extract_rc_coupled true 
