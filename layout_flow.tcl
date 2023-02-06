@@ -45,11 +45,11 @@ place_opt_design
 check_place
 
 # Generate reports
-report_area > $LAYOUT_REPORTS/area.txt
-report_power > $LAYOUT_REPORTS/power.txt
-report_timing > $LAYOUT_REPORTS/timing.txt
-report_gate_count -out_file $LAYOUT_REPORTS/gates.txt
-report_qor -format text -file $LAYOUT_REPORTS/qor.txt
+report_area > $LAYOUT_REPORTS/area_prects.txt
+report_power > $LAYOUT_REPORTS/power_prects.txt
+report_timing > $LAYOUT_REPORTS/timing_prects.txt
+report_gate_count -out_file $LAYOUT_REPORTS/gates_prects.txt
+report_qor -format text -file $LAYOUT_REPORTS/qor_prects.txt
 
 # Early power rail analysis
 source [ file join $LAYOUT_SCRIPTS early_power_rail.tcl ]
@@ -60,4 +60,20 @@ source [ file join $LAYOUT_SCRIPTS early_global_route.tcl ]
 # Clock tree synthesis
 source [ file join $LAYOUT_SCRIPTS create_clock_tree.tcl ]
 
-report_timing
+report_clock_trees > $LAYOUT_REPORTS/clocktree.txt
+report_skew_groups > $LAYOUT_REPORTS/clocktree_skew.txt
+
+report_area > $LAYOUT_REPORTS/area_postcts.txt
+report_power > $LAYOUT_REPORTS/power_postcts.txt
+report_timing > $LAYOUT_REPORTS/timing_postcts.txt
+report_gate_count -out_file $LAYOUT_REPORTS/gates_postcts.txt
+report_qor -format text -file $LAYOUT_REPORTS/qor_postcts.txt
+
+# Commence final detailed routing
+set_db route_design_top_routing_layer 11
+set_db route_design_bottom_routing_layer 1
+set_db route_design_with_timing_driven true
+set_db route_design_with_si_driven true
+route_design -global_detail -via_opt
+
+

@@ -8,9 +8,7 @@ create_route_rule -name NDR_ClockTree \
 
 # Clock tree configuration:
 # Routing on layers 9-5 and in between
-create_route_type -name ClockTrack \
- -top_preferred_layer 9 -bottom_preferred_layer 5 \ 
- -route_rule NDR_ClockTree \
+create_route_type -name ClockTrack -top_preferred_layer 9 -bottom_preferred_layer 5 -route_rule NDR_ClockTree
 
 # Timing targets: max skew 100 ps, max transition time 150 ps
 set_db cts_route_type_leaf ClockTrack
