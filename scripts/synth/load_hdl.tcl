@@ -1,6 +1,3 @@
-# Insert clock gating circuitry
-set_db lp_insert_clock_gating true
-
 # Read the Verilog in (with syntax check)
 read_hdl picorv32.v
 
