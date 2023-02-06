@@ -1,6 +1,6 @@
 # Floorplan mode (fast placement, may be illegal)
 # Also implies set_db place_global_cong_effort low
-set_db place_design_floorplan_mode true
+set_db place_design_floorplan_mode false
 
 # Whether to perform legal
 set_db place_design_refine_place true
