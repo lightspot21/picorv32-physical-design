@@ -47,7 +47,8 @@ check_place
 # Generate reports
 report_area > $LAYOUT_REPORTS/area_prects.txt
 report_power > $LAYOUT_REPORTS/power_prects.txt
-report_timing > $LAYOUT_REPORTS/timing_prects.txt
+time_design -pre_cts -slack_report > $LAYOUT_REPORTS/timing_setup_prects.txt
+time_design -pre_cts -hold -slack_report > $LAYOUT_REPORTS/timing_hold_prects.txt
 report_gate_count -out_file $LAYOUT_REPORTS/gates_prects.txt
 report_qor -format text -file $LAYOUT_REPORTS/qor_prects.txt
 
@@ -65,7 +66,8 @@ report_skew_groups > $LAYOUT_REPORTS/clocktree_skew.txt
 
 report_area > $LAYOUT_REPORTS/area_postcts.txt
 report_power > $LAYOUT_REPORTS/power_postcts.txt
-report_timing > $LAYOUT_REPORTS/timing_postcts.txt
+time_design -post_cts -slack_report > $LAYOUT_REPORTS/timing_setup_postcts.txt
+time_design -post_cts -hold -slack_report > $LAYOUT_REPORTS/timing_hold_postcts.txt
 report_gate_count -out_file $LAYOUT_REPORTS/gates_postcts.txt
 report_qor -format text -file $LAYOUT_REPORTS/qor_postcts.txt
 
@@ -82,7 +84,11 @@ route_design -global_detail -via_opt
 
 report_area > $LAYOUT_REPORTS/area_postroute.txt
 report_power > $LAYOUT_REPORTS/power_postroute.txt
-report_timing > $LAYOUT_REPORTS/timing_postroute.txt
+# default is 'single'
+set_db timing_analysis_type ocv
+time_design -post_route -slack_report > $LAYOUT_REPORTS/timing_setup_postroute.txt
+time_design -post_route -hold -slack_report > $LAYOUT_REPORTS/timing_hold_postroute.txt
+set_db timing_analysis_type single
 report_gate_count -out_file $LAYOUT_REPORTS/gates_postroute.txt
 report_qor -format text -file $LAYOUT_REPORTS/qor_postroute.txt
 
