@@ -55,4 +55,9 @@ report_qor -format text -file $LAYOUT_REPORTS/qor.txt
 source [ file join $LAYOUT_SCRIPTS early_power_rail.tcl ]
 
 # Early global route
-#source [ file join $LAYOUT_SCRIPTS early_global_route.tcl ]
+source [ file join $LAYOUT_SCRIPTS early_global_route.tcl ]
+
+# Clock tree synthesis
+source [ file join $LAYOUT_SCRIPTS create_clock_tree.tcl ]
+
+report_timing
