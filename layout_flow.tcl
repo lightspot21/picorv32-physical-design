@@ -52,7 +52,7 @@ report_gate_count -out_file $LAYOUT_REPORTS/gates_prects.txt
 report_qor -format text -file $LAYOUT_REPORTS/qor_prects.txt
 
 # Early power rail analysis
-source [ file join $LAYOUT_SCRIPTS early_power_rail.tcl ]
+#source [ file join $LAYOUT_SCRIPTS early_power_rail.tcl ]
 
 # Early global route
 source [ file join $LAYOUT_SCRIPTS early_global_route.tcl ]
