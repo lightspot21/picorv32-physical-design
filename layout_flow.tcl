@@ -36,10 +36,8 @@ source [ file join $LAYOUT_SCRIPTS configure_placement.tcl ]
 # but opt_design => +6.kati slack. plain place puts cells
 # too far away from each other while opt packs them
 # as close as possible
-#place_design
-#opt_design
-# or at the same time:
-place_opt_design
+place_design
+opt_design
 
 # Check placement
 check_place

@@ -1,3 +1,7 @@
+# Optimization effort (timing+power)
+set_db opt_effort low 
+set_db opt_power_effort high 
+
 # Floorplan mode (fast placement, may be illegal)
 # Also implies set_db place_global_cong_effort low
 set_db place_design_floorplan_mode false
@@ -13,16 +17,16 @@ set_db place_global_place_io_pins true
 
 # Control timing-driven place effort
 # (by default place_design runs timing-based placement)
-set_db place_global_timing_effort high
+#set_db place_global_timing_effort high
 
 # Clock-gate-aware placement
 set_db place_global_clock_gate_aware true
 
 # Power-driven placement (activity+clock)
-# set_db place_global_activity_power_driven
-# set_db place_global_activity_power_driven_effort
-# set_db place_global_clock_power_driven_effort
-# set_db place_global_clock_power_driven
+ set_db place_global_activity_power_driven true
+ set_db place_global_activity_power_driven_effort high
+ set_db place_global_clock_power_driven_effort high
+ set_db place_global_clock_power_driven true
 
 # Simplify netlist
 set_db opt_remove_redundant_insts true
