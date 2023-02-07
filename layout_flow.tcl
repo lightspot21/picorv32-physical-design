@@ -62,6 +62,9 @@ source [ file join $LAYOUT_SCRIPTS create_clock_tree.tcl ]
 report_clock_trees > $LAYOUT_REPORTS/clocktree.txt
 report_skew_groups > $LAYOUT_REPORTS/clocktree_skew.txt
 
+# Optimize again after CTS
+opt_design
+
 report_area > $LAYOUT_REPORTS/area_postcts.txt
 report_power > $LAYOUT_REPORTS/power_postcts.txt
 time_design -post_cts -slack_report > $LAYOUT_REPORTS/timing_setup_postcts.txt
@@ -70,9 +73,12 @@ report_gate_count -out_file $LAYOUT_REPORTS/gates_postcts.txt
 report_qor -format text -file $LAYOUT_REPORTS/qor_postcts.txt
 
 # Commence final detailed routing
-# (layers 1-11, high effort on vias, timing+SI driven)
-set_db route_design_top_routing_layer 11
+# (layers 1-4, medium effort on vias, timing+SI driven)
+# Putting to 4 in order to not disturb the clock routes if possible
+set_db route_design_top_routing_layer 4
 set_db route_design_bottom_routing_layer 1
+
+set_db route_design_detail_use_multi_cut_via_effort medium
 set_db route_design_concurrent_minimize_via_count_effort high
 set_db route_design_detail_fix_antenna true
 set_db route_design_with_timing_driven true
@@ -110,7 +116,3 @@ check_connectivity -type all
 set_metal_fill -layer { Metal1 Metal2 Metal3 Metal4 Metal5 Metal6 Metal7 Metal8 Metal9 Metal10 Metal11 } -opc_active_spacing 0.200 -min_density 10.00
 add_metal_fill -layer { Metal1 Metal2 Metal3 Metal4 Metal5 Metal6 Metal7 Metal8 Metal9 Metal10 Metal11 } -nets { VSS VDD }
 
-#
-#set_db extract_rc_engine post_route
-#set_db extract_rc_effort_level signoff
-#set_db extract_rc_coupled true 

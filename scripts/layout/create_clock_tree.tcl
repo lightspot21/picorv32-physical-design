@@ -10,11 +10,12 @@ create_route_rule -name NDR_ClockTree \
 # Routing on layers 9-5 and in between
 create_route_type -name ClockTrack -top_preferred_layer 9 -bottom_preferred_layer 5 -route_rule NDR_ClockTree
 
-# Timing targets: max skew 100 ps, max transition time 150 ps
+# Timing targets and track types
+# max skew 100 ps (0.1 TU), max transition time 150 ps (0.15 TU)
 set_db cts_route_type_leaf ClockTrack
 set_db cts_route_type_trunk ClockTrack
-set_db cts_target_skew 100
-set_db cts_target_max_transition_time 150
+set_db cts_target_skew 0.1
+set_db cts_target_max_transition_time 0.15
 
 # Save all constraints (above + SDC)
 create_clock_tree_spec -out_file interm/layout/clocktree.spec

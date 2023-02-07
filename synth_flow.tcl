@@ -37,6 +37,7 @@ report_power > $SYNTH_REPORTS/power.txt
 report_timing > $SYNTH_REPORTS/timing.txt
 report_gates > $SYNTH_REPORTS/gates.txt
 report_qor > $SYNTH_REPORTS/qor.txt
+report_clock_gating > $SYNTH_REPORTS/clockgating.txt
 
 # Export final design+constraints used
 write_hdl > $SYNTH_INTERM/design/design.v
