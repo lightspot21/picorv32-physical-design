@@ -7,3 +7,4 @@ set SCRIPTS $ROOT/scripts
 set OUTPUT $ROOT/out
 set INTERMEDIATE $ROOT/interm
 set INTERM_GENUS_INV $INTERMEDIATE/genus_to_innovus
+set INTERM_SYNTH $INTERMEDIATE/synth
