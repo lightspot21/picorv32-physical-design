@@ -23,10 +23,11 @@ connect_global_net VSS -type pg_pin -pin_base_name VSS -all
 connect_global_net VSS -type tie_lo -inst_base_name *
 
 # Create power+ground pins and connect with rings
-create_pg_pin -name VDD -net VDD -geom Metal11 0 13 12 19
-create_pg_pin -name VSS -net VSS -geom Metal11 0 201 6 207
-update_power_vias -add_vias 1 -top_layer Metal11 -bottom_layer Metal10 -area {9 13 12 19}
-update_power_vias -add_vias 1 -top_layer Metal11 -bottom_layer Metal10 -area {3 201 6 207}
+create_pg_pin -name VDD -net VDD -geom Metal3 237 253 252 256
+update_power_vias -add_vias 1 -top_layer Metal10 -bottom_layer Metal3 -area {249 252 252 256}
+
+create_pg_pin -name VSS -net VSS -geom Metal3 237 7533 246 7536
+update_power_vias -add_vias 1 -top_layer Metal10 -bottom_layer Metal3 -area {243 7533 246 7536}
 
 # Create follow pins (logic-to-power connections)
 set_db route_special_via_connect_to_shape { stripe }

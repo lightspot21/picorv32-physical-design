@@ -11,8 +11,9 @@ set LAYOUT_INTERM  $INTERMEDIATE/layout
 # Prepare Innovus with Genus exported design
 
 read_mmmc $INTERM_GENUS_INV/picorv32.mmmc.tcl
-read_physical -lef [ list "$LIB_ROOT/lef/gsclib045_tech.lef" "$LIB_ROOT/lef/gsclib045_macro.lef" ]
-read_netlist $INTERM_GENUS_INV/picorv32.v
+read_physical -lef [ list "$LIB_ROOT/lef/gsclib045_tech.lef" "$LIB_ROOT/lef/gsclib045_macro.lef" "$LIB_ROOT/../../../../../../../../giolib045/lan/flow/rfkit/reference_libs/GPDK045/giolib045_v3.3/lef/giolib045.lef" ]
+read_netlist $DATA/picorv32_pads.v -top example_module_pads
+read_io_file $DATA/picorv32.save.io
 
 set_db init_power_nets VDD
 set_db init_ground_nets VSS
@@ -23,7 +24,7 @@ init_design
 # (aspect ratio 1, core util 75%, 15 micron
 # margin all sides for I/O)
 #
-create_floorplan -site CoreSite -core_density_size 1 0.75 15 15 15 15
+create_floorplan -site CoreSite -core_density_size 1 0.75 15 15 15 15 -flip s
 
 # Create PDN
 source [ file join $LAYOUT_SCRIPTS create_pdn.tcl ]
@@ -32,94 +33,94 @@ source [ file join $LAYOUT_SCRIPTS create_pdn.tcl ]
 source [ file join $LAYOUT_SCRIPTS configure_placement.tcl ]
 
 # Place design 
-place_design
-opt_design -pre_cts
+#place_design
+#opt_design -pre_cts
 
 # Check placement
-check_place
+#check_place
 
 # Generate reports
-report_area > $LAYOUT_REPORTS/area_prects.txt
-report_power > $LAYOUT_REPORTS/power_prects.txt
-time_design -pre_cts -slack_report > $LAYOUT_REPORTS/timing_setup_prects.txt
-time_design -pre_cts -hold -slack_report > $LAYOUT_REPORTS/timing_hold_prects.txt
-report_gate_count -out_file $LAYOUT_REPORTS/gates_prects.txt
-report_qor -format text -file $LAYOUT_REPORTS/qor_prects.txt
-report_route -summary > $LAYOUT_REPORTS/route_prects.txt
+#report_area > $LAYOUT_REPORTS/area_prects.txt
+#report_power > $LAYOUT_REPORTS/power_prects.txt
+#time_design -pre_cts -slack_report > $LAYOUT_REPORTS/timing_setup_prects.txt
+#time_design -pre_cts -hold -slack_report > $LAYOUT_REPORTS/timing_hold_prects.txt
+#report_gate_count -out_file $LAYOUT_REPORTS/gates_prects.txt
+#report_qor -format text -file $LAYOUT_REPORTS/qor_prects.txt
+#report_route -summary > $LAYOUT_REPORTS/route_prects.txt
 
 # Early power rail analysis
-source [ file join $LAYOUT_SCRIPTS early_power_rail.tcl ]
+#source [ file join $LAYOUT_SCRIPTS early_power_rail.tcl ]
 
 # Early global route
-source [ file join $LAYOUT_SCRIPTS early_global_route.tcl ]
+#source [ file join $LAYOUT_SCRIPTS early_global_route.tcl ]
 
 # Clock tree synthesis
-source [ file join $LAYOUT_SCRIPTS create_clock_tree.tcl ]
+#source [ file join $LAYOUT_SCRIPTS create_clock_tree.tcl ]
 
-report_clock_trees > $LAYOUT_REPORTS/clocktree.txt
-report_skew_groups > $LAYOUT_REPORTS/clocktree_skew.txt
+#report_clock_trees > $LAYOUT_REPORTS/clocktree.txt
+#report_skew_groups > $LAYOUT_REPORTS/clocktree_skew.txt
 
 # Optimize again after CTS
-opt_design -post_cts
+#opt_design -post_cts
 
-report_area > $LAYOUT_REPORTS/area_postcts.txt
-report_power > $LAYOUT_REPORTS/power_postcts.txt
-time_design -post_cts -slack_report > $LAYOUT_REPORTS/timing_setup_postcts.txt
-time_design -post_cts -hold -slack_report > $LAYOUT_REPORTS/timing_hold_postcts.txt
-report_gate_count -out_file $LAYOUT_REPORTS/gates_postcts.txt
-report_qor -format text -file $LAYOUT_REPORTS/qor_postcts.txt
-report_route -summary > $LAYOUT_REPORTS/route_postcts.txt
+#report_area > $LAYOUT_REPORTS/area_postcts.txt
+#report_power > $LAYOUT_REPORTS/power_postcts.txt
+#time_design -post_cts -slack_report > $LAYOUT_REPORTS/timing_setup_postcts.txt
+#time_design -post_cts -hold -slack_report > $LAYOUT_REPORTS/timing_hold_postcts.txt
+#report_gate_count -out_file $LAYOUT_REPORTS/gates_postcts.txt
+#report_qor -format text -file $LAYOUT_REPORTS/qor_postcts.txt
+#report_route -summary > $LAYOUT_REPORTS/route_postcts.txt
 
 # Commence final detailed routing
 # (layers 1-11, medium effort on vias, timing+SI driven)
-set_db route_design_top_routing_layer 11
-set_db route_design_bottom_routing_layer 1
+#set_db route_design_top_routing_layer 11
+#set_db route_design_bottom_routing_layer 1
 
 #set_db route_design_detail_use_multi_cut_via_effort medium
 # high effort instead of medium fixes DRC spacing violation
-set_db route_design_concurrent_minimize_via_count_effort high
-set_db route_design_detail_fix_antenna true
-set_db route_design_with_timing_driven true
-set_db route_design_with_si_driven true
+#set_db route_design_concurrent_minimize_via_count_effort high
+#set_db route_design_detail_fix_antenna true
+#set_db route_design_with_timing_driven true
+#set_db route_design_with_si_driven true
 
-route_design -global_detail -via_opt
+#route_design -global_detail -via_opt
 
 # default is 'single'. 
 # Set here to 'ocv' because postroute says so
-set_db timing_analysis_type ocv
+#set_db timing_analysis_type ocv
 
 # Optimize yet again after routing
-opt_design -post_route
+#opt_design -post_route
 
-report_area > $LAYOUT_REPORTS/area_postroute.txt
-report_power > $LAYOUT_REPORTS/power_postroute.txt
-report_gate_count -out_file $LAYOUT_REPORTS/gates_postroute.txt
-report_qor -format text -file $LAYOUT_REPORTS/qor_postroute.txt
-report_route -summary > $LAYOUT_REPORTS/route_postroute.txt
+#report_area > $LAYOUT_REPORTS/area_postroute.txt
+#report_power > $LAYOUT_REPORTS/power_postroute.txt
+#report_gate_count -out_file $LAYOUT_REPORTS/gates_postroute.txt
+#report_qor -format text -file $LAYOUT_REPORTS/qor_postroute.txt
+#report_route -summary > $LAYOUT_REPORTS/route_postroute.txt
 
-time_design -post_route -slack_report > $LAYOUT_REPORTS/timing_setup_postroute.txt
-time_design -post_route -hold -slack_report > $LAYOUT_REPORTS/timing_hold_postroute.txt
-set_db timing_analysis_type single
+#time_design -post_route -slack_report > $LAYOUT_REPORTS/timing_setup_postroute.txt
+#time_design -post_route -hold -slack_report > $LAYOUT_REPORTS/timing_hold_postroute.txt
+#set_db timing_analysis_type single
 
 # Run DRC+connectivity checks
-set_db check_drc_disable_rules {}
-set_db check_drc_implant true
-set_db check_drc_implant_across_rows false
-set_db check_drc_ndr_spacing false
-set_db check_drc_check_only default
-set_db check_drc_inside_via_def false
-set_db check_drc_exclude_pg_net false
-set_db check_drc_ignore_trial_route false
-set_db check_drc_use_min_spacing_on_block_obs auto
-set_db check_drc_report $LAYOUT_REPORTS/picorv32.drc.rpt
-set_db check_drc_limit 1000
+#set_db check_drc_disable_rules {}
+#set_db check_drc_implant true
+#set_db check_drc_implant_across_rows false
+#set_db check_drc_ndr_spacing false
+#set_db check_drc_check_only default
+#set_db check_drc_inside_via_def false
+#set_db check_drc_exclude_pg_net false
+#set_db check_drc_ignore_trial_route false
+#set_db check_drc_use_min_spacing_on_block_obs auto
+#set_db check_drc_report $LAYOUT_REPORTS/picorv32.drc.rpt
+#set_db check_drc_limit 1000
 
-check_drc
-check_connectivity -type all
+#check_drc
+#check_connectivity -type all
 
 # Fill unused space with metal
-set_metal_fill -layer { Metal1 Metal2 Metal3 Metal4 Metal5 Metal6 Metal7 Metal8 Metal9 Metal10 Metal11 } -opc_active_spacing 0.200 -min_density 10.00
-add_metal_fill -layer { Metal1 Metal2 Metal3 Metal4 Metal5 Metal6 Metal7 Metal8 Metal9 Metal10 Metal11 } -nets { VSS VDD }
+#set_metal_fill -layer { Metal1 Metal2 Metal3 Metal4 Metal5 Metal6 Metal7 Metal8 Metal9 Metal10 Metal11 } -opc_active_spacing 0.200 -min_density 10.00
+#add_metal_fill -layer { Metal1 Metal2 Metal3 Metal4 Metal5 Metal6 Metal7 Metal8 Metal9 Metal10 Metal11 } -nets { VSS VDD }
 
 
 # Sign-off STA (not working: extraction fails with sth like
