@@ -440,7 +440,7 @@ module example_module_pads(clk, resetn, trap, mem_valid, mem_instr, mem_ready,
 	padIORINGCORNER pad_corner3();
 
 // Instance
-	picorv32(clk, resetn, trap, mem_valid, mem_instr, mem_ready,
+     picorv32 cpu(clk, resetn, trap, mem_valid, mem_instr, mem_ready,
      mem_addr, mem_wdata, mem_wstrb, mem_rdata, mem_la_read,
      mem_la_write, mem_la_addr, mem_la_wdata, mem_la_wstrb, pcpi_valid,
      pcpi_insn, pcpi_rs1, pcpi_rs2, pcpi_wr, pcpi_rd, pcpi_wait,
