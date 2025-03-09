@@ -1,0 +1,257 @@
+Clock tree timing engine global stage delay update for default_emulate_delay_corner:setup.early...
+Clock tree timing engine global stage delay update for default_emulate_delay_corner:setup.early done. (took cpu=0:00:00.1 real=0:00:00.1)
+Clock tree timing engine global stage delay update for default_emulate_delay_corner:setup.late...
+Clock tree timing engine global stage delay update for default_emulate_delay_corner:setup.late done. (took cpu=0:00:00.0 real=0:00:00.0)
+Clock tree timing engine global stage delay update for default_emulate_delay_corner:hold.early...
+Clock tree timing engine global stage delay update for default_emulate_delay_corner:hold.early done. (took cpu=0:00:00.0 real=0:00:00.0)
+Clock tree timing engine global stage delay update for default_emulate_delay_corner:hold.late...
+Clock tree timing engine global stage delay update for default_emulate_delay_corner:hold.late done. (took cpu=0:00:00.0 real=0:00:00.0)
+
+Clock DAG stats:
+================
+
+-------------------------------------------------------------
+Cell type                     Count    Area       Capacitance
+-------------------------------------------------------------
+Buffers                        56      134.064       0.022
+Inverters                       0        0.000       0.000
+Integrated Clock Gates          0        0.000       0.000
+Non-Integrated Clock Gates      0        0.000       0.000
+Clock Logic                     0        0.000       0.000
+All                            56      134.064       0.022
+-------------------------------------------------------------
+
+
+Clock DAG wire lengths:
+=======================
+
+--------------------
+Type     Wire Length
+--------------------
+Top          0.000
+Trunk     1073.025
+Leaf      6974.600
+Total     8047.625
+--------------------
+
+
+Clock DAG hp wire lengths:
+==========================
+
+-----------------------
+Type     hp Wire Length
+-----------------------
+Top            0.000
+Trunk        692.770
+Leaf        2736.775
+Total       3429.545
+-----------------------
+
+
+Clock DAG capacitances:
+=======================
+
+--------------------------------
+Type     Gate     Wire     Total
+--------------------------------
+Top      0.000    0.000    0.000
+Trunk    0.022    0.080    0.101
+Leaf     0.412    0.657    1.069
+Total    0.434    0.736    1.170
+--------------------------------
+
+
+Clock DAG sink capacitances:
+============================
+
+--------------------------------------------------------
+Count    Total    Average    Std. Dev.    Min      Max
+--------------------------------------------------------
+1960     0.412     0.000       0.000      0.000    0.000
+--------------------------------------------------------
+
+
+Clock DAG net violations:
+=========================
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+Type                    Units    Count    Average    Std. Dev.    Sum      Top 10 violations
+------------------------------------------------------------------------------------------------------------------------------------------------------
+Remaining Transition    ns        23       0.007       0.004      0.150    [0.017, 0.014, 0.011, 0.011, 0.010, 0.009, 0.009, 0.008, 0.008, 0.008, ...]
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Clock DAG primary half-corner transition distribution:
+======================================================
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Net Type    Target    Count    Average    Std. Dev.    Min      Max      Distribution                                                               Over Target
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Trunk       0.150       6       0.137       0.010      0.125    0.155    {0 <= 0.090ns, 0 <= 0.120ns, 2 <= 0.135ns, 3 <= 0.142ns, 0 <= 0.150ns}     {1 <= 0.158ns, 0 <= 0.165ns, 0 <= 0.180ns, 0 <= 0.225ns, 0 > 0.225ns}
+Leaf        0.150      51       0.148       0.010      0.123    0.167    {0 <= 0.090ns, 0 <= 0.120ns, 5 <= 0.135ns, 5 <= 0.142ns, 19 <= 0.150ns}    {12 <= 0.158ns, 9 <= 0.165ns, 1 <= 0.180ns, 0 <= 0.225ns, 0 > 0.225ns}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Clock DAG library cell distribution:
+====================================
+
+-----------------------------------------
+Name        Type      Inst     Inst Area 
+                      Count    (um^2)
+-----------------------------------------
+CLKBUFX4    buffer     56       134.064
+-----------------------------------------
+
+
+
+Please note that the following tables reflect only the defined clock trees, so the flop counts might not include all flops in your design.
+
+Clock Tree Summary:
+===================
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Clock Tree  # Posedge  # Negedge  # RAM  # Enable  # Non enable  # Other  # Clock  # Bufs  # Invs  # Other  # Implicit  Max       Max     Max     Max          Standard   Wire   Gate   Clock Tree Root
+Name        Flops      Flops      Clock  Latch     Latch         Sinks    Gates                    Clock    ignore/     Non-leaf  Leaf    Length  Source-sink  cell area  cap    cap    
+                                  Pins   Sinks     Sinks                                           Cells    stop pins   Fanout    Fanout  (um)    Resistance   (um^2)     (pF)   (pF)   
+                                                                                                                                                  (Ohms)                                
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+clk           1960         0        0       0           0           0        0       56      0        0         0          13       46    184.02    1718.23     134.064   0.736  0.434  clk
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Summary across all clock trees :
+================================
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Posedge  # Negedge  # RAM  # Enable  # Non enable  # Other  # Clock  # Bufs  # Invs  # Other  # Implicit  Max       Average   Max     Average  Max      Max          Standard   Wire   Gate
+Flops      Flops      Clock  Latch     Latch         Sinks    Gates                    Clock    ignore/     Non-leaf  Non-leaf  Leaf    Leaf     Length   Source-sink  cell area  cap    cap
+                      Pins   Sinks     Sinks                                           Cells    stop pins   Fanout    Fanout    Fanout  Fanout   (um)     Resistance   (um^2)     (pF)   (pF)
+                                                                                                                                                          (Ohms)                         
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  1960         0        0       0           0           0        0       56      0        0         0          13     9.33333     46    38.4314  184.020    171.823     134.064   0.736  0.434
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Physical metrics across all clock trees
+=======================================
+
+-----------------------------------------------------------------------
+Metric                               Minimum  Average  Maximum  Std.dev
+-----------------------------------------------------------------------
+Source-sink routed net length (um)   24.770    51.147  184.020  26.283
+Source-sink manhattan distance (um)  24.745    48.090  172.350  26.051
+Source-sink resistance (Ohm)         71.056   122.080  171.823  21.060
+-----------------------------------------------------------------------
+
+Transition distribution for half-corner default_emulate_delay_corner:setup.late:
+================================================================================
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Net Type    Target    Count    Average    Std. Dev.    Min      Max      Distribution                                                               Over Target
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Trunk       0.150       6       0.137       0.010      0.125    0.155    {0 <= 0.090ns, 0 <= 0.120ns, 2 <= 0.135ns, 3 <= 0.142ns, 0 <= 0.150ns}     {1 <= 0.158ns, 0 <= 0.165ns, 0 <= 0.180ns, 0 <= 0.225ns, 0 > 0.225ns}
+Leaf        0.150      51       0.148       0.010      0.123    0.167    {0 <= 0.090ns, 0 <= 0.120ns, 5 <= 0.135ns, 5 <= 0.142ns, 19 <= 0.150ns}    {12 <= 0.158ns, 9 <= 0.165ns, 1 <= 0.180ns, 0 <= 0.225ns, 0 > 0.225ns}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Count of violations across all clock trees:
+===========================================
+
+---------------------------------------------------------------------------------------
+Clock Tree  # Max capacitance  # Max resistance  # Max length  # Max fanout  # Slew
+Name        violations         violations        violations    violations    violations
+---------------------------------------------------------------------------------------
+clk                 0                 0               0             0           926
+---------------------------------------------------------------------------------------
+Total               0                 0               0             0           926
+---------------------------------------------------------------------------------------
+
+Note the above table per clock tree is based on CCOpt clock tree view. The violations are counted across half corners.
+
+Found a total of 0 clock tree pins with max capacitance violations.
+Found a total of 0 clock tree nets with max resistance violations.
+Found a total of 0 clock tree nets with max length violations.
+Found a total of 0 clock tree nets with max fanout violations.
+Found a total of 926 clock tree pins with a slew violation.
+
+Slew violation summary across all clock trees - Top 10 violating pins:
+======================================================================
+
+Target and measured clock slews (in ns):
+
+--------------------------------------------------------------------------------------------------------------------
+Half corner                              Violation  Slew    Slew      Dont   Ideal  Target    Pin
+                                         amount     target  achieved  touch  net?   source    
+                                                                      net?                    
+--------------------------------------------------------------------------------------------------------------------
+default_emulate_delay_corner:setup.late    0.017    0.150    0.167    N      N      explicit  cpuregs_reg[14][13]/CK
+default_emulate_delay_corner:setup.late    0.017    0.150    0.167    N      N      explicit  cpuregs_reg[14][20]/CK
+default_emulate_delay_corner:setup.late    0.017    0.150    0.167    N      N      explicit  cpuregs_reg[16][19]/CK
+default_emulate_delay_corner:setup.late    0.017    0.150    0.167    N      N      explicit  cpuregs_reg[17][19]/CK
+default_emulate_delay_corner:setup.late    0.017    0.150    0.167    N      N      explicit  cpuregs_reg[18][19]/CK
+default_emulate_delay_corner:setup.late    0.017    0.150    0.167    N      N      explicit  cpuregs_reg[19][19]/CK
+default_emulate_delay_corner:setup.late    0.017    0.150    0.167    N      N      explicit  cpuregs_reg[20][19]/CK
+default_emulate_delay_corner:setup.late    0.017    0.150    0.167    N      N      explicit  cpuregs_reg[21][19]/CK
+default_emulate_delay_corner:setup.late    0.017    0.150    0.167    N      N      explicit  cpuregs_reg[24][19]/CK
+default_emulate_delay_corner:setup.late    0.017    0.150    0.167    N      N      explicit  CTS_ccl_a_buf_00225/Y
+--------------------------------------------------------------------------------------------------------------------
+
+Target sources:
+auto extracted - target was extracted from SDC.
+auto computed - target was computed when balancing trees.
+explicit - target is explicitly set via cts_target_max_transition_time property.
+pin explicit - target is explicitly set for this pin via cts_pin_target_max_transition_time property.
+liberty explicit - target is explicitly set via max_transition from liberty library.
+
+Found 0 pins on nets marked dont_touch that have slew violations.
+Found 0 pins on nets marked dont_touch that do not have slew violations.
+Found 0 pins on nets marked ideal_network that have slew violations.
+Found 0 pins on nets marked ideal_network that do not have slew violations.
+
+
+Report for clock tree: clk
+==========================
+
+Clock Tree Gating Structure (Logical):
+
+# Full cycle clock gates   : 0
+Minimum clock gating depth : 0
+Maximum clock gating depth : 0
+Clock gate area (um^2)     : 0.000
+
+Clock Tree Buffering Structure (Logical):
+
+# Buffers             :  56
+# Inverters           :   0
+  Total               :  56
+Minimum depth         :   2
+Maximum depth         :   2
+Buffering area (um^2) : 134.064
+
+Clock Tree Level Structure (Logical):
+
+---------------------------------------------------------------------------
+Level  # Full  # Posedge  # Negedge  # RAM  # Enable  # Non enable  # Other
+       Cycle   Flops      Flops      Clock  Latch     Latch         Sinks
+                                     Pins   Sinks     Sinks         
+---------------------------------------------------------------------------
+root     0       1960         0        0       0           0           0
+---------------------------------------------------------------------------
+Total    0       1960         0        0       0           0           0
+---------------------------------------------------------------------------
+
+Target and measured clock slews (in ns):
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+Timing Corner                             Worst Rising  Worst Falling  Worst Rising  Worst Falling  Leaf Slew    Leaf Slew  Trunk Slew   Trunk Slew
+                                          Leaf Slew     Leaf Slew      Trunk Slew    Trunk Slew     Target Type  Target     Target Type  Target
+---------------------------------------------------------------------------------------------------------------------------------------------------
+default_emulate_delay_corner:hold.early      0.139          0.166         0.114          0.138      ignored          -      ignored          -
+default_emulate_delay_corner:hold.late       0.140          0.167         0.129          0.155      ignored          -      ignored          -
+default_emulate_delay_corner:setup.early     0.139          0.166         0.114          0.138      ignored          -      ignored          -
+default_emulate_delay_corner:setup.late      0.140          0.167         0.129          0.155      explicit     *0.150     explicit     *0.150
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+* - indicates that target was not met.
+
+auto extracted - target was extracted from SDC.
+auto computed - target was computed when balancing trees.
+
+

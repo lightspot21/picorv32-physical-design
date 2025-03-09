@@ -1,0 +1,40 @@
+ Reset EOS DB
+Ignoring AAE DB Resetting ...
+The design is extracted. Skipping TQuantus.
+**WARN: (IMPSP-365):	Design has inst(s) with SITE 'CoreSiteDouble', but the floorplan has no rows defined for this site. Any locations found for such insts will be illegal; create rows for this site to avoid this.
+
+------------------------------------------------------------
+         time_design Summary                             
+------------------------------------------------------------
+
+Setup views included:
+ default_emulate_view 
+
++--------------------+---------+---------+---------+
+|     Setup mode     |   all   | reg2reg | default |
++--------------------+---------+---------+---------+
+|           WNS (ns):|  4.355  |  4.694  |  4.355  |
+|           TNS (ns):|  0.000  |  0.000  |  0.000  |
+|    Violating Paths:|    0    |    0    |    0    |
+|          All Paths:|  4680   |  4428   |  2036   |
++--------------------+---------+---------+---------+
+
++----------------+-------------------------------+------------------+
+|                |              Real             |       Total      |
+|    DRVs        +------------------+------------+------------------|
+|                |  Nr nets(terms)  | Worst Vio  |  Nr nets(terms)  |
++----------------+------------------+------------+------------------+
+|   max_cap      |    234 (234)     |   -0.205   |    234 (234)     |
+|   max_tran     |      0 (0)       |   0.000    |      0 (0)       |
+|   max_fanout   |      0 (0)       |     0      |      0 (0)       |
+|   max_length   |      0 (0)       |     0      |      0 (0)       |
++----------------+------------------+------------+------------------+
+
+Density: 76.557%
+Total number of glitch violations: 0
+------------------------------------------------------------
+Reported timing to dir ./timingReports
+Total CPU time: 1.05 sec
+Total Real time: 1.0 sec
+Total Memory Usage: 2178.953125 Mbytes
+Reset AAE Options

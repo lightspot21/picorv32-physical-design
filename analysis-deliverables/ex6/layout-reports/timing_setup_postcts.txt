@@ -1,0 +1,38 @@
+Start to check current routing status for nets...
+All nets are already routed correctly.
+End to check current routing status for nets (mem=1988.9M)
+
+------------------------------------------------------------
+         time_design Summary                             
+------------------------------------------------------------
+
+Setup views included:
+ default_emulate_view 
+
++--------------------+---------+---------+---------+---------+
+|     Setup mode     |   all   | reg2reg |reg2cgate| default |
++--------------------+---------+---------+---------+---------+
+|           WNS (ns):|  6.321  |  6.547  |  8.436  |  6.321  |
+|           TNS (ns):|  0.000  |  0.000  |  0.000  |  0.000  |
+|    Violating Paths:|    0    |    0    |    0    |    0    |
+|          All Paths:|  2364   |  2053   |   58    |   767   |
++--------------------+---------+---------+---------+---------+
+
++----------------+-------------------------------+------------------+
+|                |              Real             |       Total      |
+|    DRVs        +------------------+------------+------------------|
+|                |  Nr nets(terms)  | Worst Vio  |  Nr nets(terms)  |
++----------------+------------------+------------+------------------+
+|   max_cap      |    234 (234)     |   -0.203   |    234 (234)     |
+|   max_tran     |      0 (0)       |   0.000    |      0 (0)       |
+|   max_fanout   |      0 (0)       |     0      |      0 (0)       |
+|   max_length   |      0 (0)       |     0      |      0 (0)       |
++----------------+------------------+------------+------------------+
+
+Density: 75.032%
+Routing Overflow: 0.00% H and 0.00% V
+------------------------------------------------------------
+Reported timing to dir ./timingReports
+Total CPU time: 1.1 sec
+Total Real time: 1.0 sec
+Total Memory Usage: 1990.925781 Mbytes

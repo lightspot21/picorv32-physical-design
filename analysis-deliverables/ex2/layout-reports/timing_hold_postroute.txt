@@ -1,0 +1,65 @@
+ Reset EOS DB
+Ignoring AAE DB Resetting ...
+The design is extracted. Skipping TQuantus.
+**WARN: (IMPSP-365):	Design has inst(s) with SITE 'CoreSiteDouble', but the floorplan has no rows defined for this site. Any locations found for such insts will be illegal; create rows for this site to avoid this.
+Starting delay calculation for Hold views
+Starting SI iteration 1 using Infinite Timing Windows
+Begin IPO call back ...
+End IPO call back ...
+#################################################################################
+# Design Stage: PostRoute
+# Design Name: picorv32
+# Design Mode: 90nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: SPEF/RCDB
+# Signoff Settings: SI On 
+#################################################################################
+AAE_INFO: 1 threads acquired from CTE.
+Calculate late delays in OCV mode...
+Calculate early delays in OCV mode...
+Start delay calculation (fullDC) (1 T). (MEM=2520.43)
+Reading RCDB with compressed RC data.
+Total number of fetched objects 10111
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+AAE_INFO-618: Total number of nets in the design is 10303,  100.0 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2601.29 CPU=0:00:02.0 REAL=0:00:02.0)
+End delay calculation (fullDC). (MEM=2601.29 CPU=0:00:02.3 REAL=0:00:02.0)
+Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 2601.3M)
+Add other clocks and setupCteToAAEClockMapping during iter 1
+Loading CTE timing window is completed (CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 2601.3M)
+Starting SI iteration 2
+Calculate late delays in OCV mode...
+Calculate early delays in OCV mode...
+Start delay calculation (fullDC) (1 T). (MEM=2563.41)
+Glitch Analysis: View default_emulate_view -- Total Number of Nets Skipped = 20. 
+Glitch Analysis: View default_emulate_view -- Total Number of Nets Analyzed = 10111. 
+Total number of fetched objects 10111
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+AAE_INFO-618: Total number of nets in the design is 10303,  0.0 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2569.56 CPU=0:00:00.1 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=2569.56 CPU=0:00:00.1 REAL=0:00:00.0)
+*** Done Building Timing Graph (cpu=0:00:04.0 real=0:00:04.0 totSessionCpu=0:11:55 mem=2569.6M)
+
+------------------------------------------------------------
+         time_design Summary                             
+------------------------------------------------------------
+
+Hold  views included:
+ default_emulate_view 
+
++--------------------+---------+---------+---------+
+|     Hold mode      |   all   | reg2reg | default |
++--------------------+---------+---------+---------+
+|           WNS (ns):|  0.113  |  0.113  |  0.368  |
+|           TNS (ns):|  0.000  |  0.000  |  0.000  |
+|    Violating Paths:|    0    |    0    |    0    |
+|          All Paths:|  4680   |  4428   |  2036   |
++--------------------+---------+---------+---------+
+
+Density: 75.660%
+------------------------------------------------------------
+Reported timing to dir ./timingReports
+Total CPU time: 4.91 sec
+Total Real time: 5.0 sec
+Total Memory Usage: 2504.007812 Mbytes
+Reset AAE Options

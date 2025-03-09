@@ -1,0 +1,43 @@
+Start to check current routing status for nets...
+All nets are already routed correctly.
+End to check current routing status for nets (mem=1968.6M)
+Starting delay calculation for Hold views
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: picorv32
+# Design Mode: 90nm
+# Analysis Mode: MMMC Non-OCV 
+# Parasitics Mode: No SPEF/RCDB
+# Signoff Settings: SI Off 
+#################################################################################
+Calculate delays in Single mode...
+Start delay calculation (fullDC) (1 T). (MEM=1970.61)
+Total number of fetched objects 9836
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+End delay calculation. (MEM=2023.64 CPU=0:00:01.2 REAL=0:00:02.0)
+End delay calculation (fullDC). (MEM=2023.64 CPU=0:00:01.9 REAL=0:00:02.0)
+*** Done Building Timing Graph (cpu=0:00:02.2 real=0:00:02.0 totSessionCpu=0:05:08 mem=2023.6M)
+
+------------------------------------------------------------
+         time_design Summary                             
+------------------------------------------------------------
+
+Hold  views included:
+ default_emulate_view 
+
++--------------------+---------+---------+---------+---------+
+|     Hold mode      |   all   | reg2reg |reg2cgate| default |
++--------------------+---------+---------+---------+---------+
+|           WNS (ns):| -0.038  | -0.038  |  0.105  |  0.370  |
+|           TNS (ns):| -0.609  | -0.609  |  0.000  |  0.000  |
+|    Violating Paths:|   31    |   31    |    0    |    0    |
+|          All Paths:|  2364   |  2053   |   58    |   767   |
++--------------------+---------+---------+---------+---------+
+
+Density: 75.032%
+Routing Overflow: 0.00% H and 0.00% V
+------------------------------------------------------------
+Reported timing to dir ./timingReports
+Total CPU time: 2.93 sec
+Total Real time: 3.0 sec
+Total Memory Usage: 1969.300781 Mbytes

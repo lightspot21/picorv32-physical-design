@@ -1,0 +1,45 @@
+Start to check current routing status for nets...
+All nets are already routed correctly.
+End to check current routing status for nets (mem=1315.1M)
+**WARN: (IMPSP-365):	Design has inst(s) with SITE 'CoreSiteDouble', but the floorplan has no rows defined for this site. Any locations found for such insts will be illegal; create rows for this site to avoid this.
+Starting delay calculation for Hold views
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: picorv32
+# Design Mode: 90nm
+# Analysis Mode: MMMC Non-OCV 
+# Parasitics Mode: No SPEF/RCDB
+# Signoff Settings: SI Off 
+#################################################################################
+Calculate delays in Single mode...
+Start delay calculation (fullDC) (1 T). (MEM=1317.14)
+Total number of fetched objects 10062
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+End delay calculation. (MEM=1379.17 CPU=0:00:01.3 REAL=0:00:02.0)
+End delay calculation (fullDC). (MEM=1379.17 CPU=0:00:02.0 REAL=0:00:02.0)
+Setting ::DelayCal::PrerouteDcFastMode 1
+*** Done Building Timing Graph (cpu=0:00:02.2 real=0:00:02.0 totSessionCpu=0:02:09 mem=1379.2M)
+
+------------------------------------------------------------
+         time_design Summary                             
+------------------------------------------------------------
+
+Hold  views included:
+ default_emulate_view 
+
++--------------------+---------+---------+---------+
+|     Hold mode      |   all   | reg2reg | default |
++--------------------+---------+---------+---------+
+|           WNS (ns):|  0.020  |  0.020  |  0.354  |
+|           TNS (ns):|  0.000  |  0.000  |  0.000  |
+|    Violating Paths:|    0    |    0    |    0    |
+|          All Paths:|  4680   |  4428   |  2036   |
++--------------------+---------+---------+---------+
+
+Density: 75.041%
+Routing Overflow: 0.00% H and 0.00% V
+------------------------------------------------------------
+Reported timing to dir ./timingReports
+Total CPU time: 3.01 sec
+Total Real time: 3.0 sec
+Total Memory Usage: 1314.828125 Mbytes

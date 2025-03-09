@@ -1,0 +1,39 @@
+ Reset EOS DB
+Ignoring AAE DB Resetting ...
+The design is extracted. Skipping TQuantus.
+
+------------------------------------------------------------
+         time_design Summary                             
+------------------------------------------------------------
+
+Setup views included:
+ default_emulate_view 
+
++--------------------+---------+---------+---------+
+|     Setup mode     |   all   | reg2reg | default |
++--------------------+---------+---------+---------+
+|           WNS (ns):|  2.410  |  2.410  |  3.545  |
+|           TNS (ns):|  0.000  |  0.000  |  0.000  |
+|    Violating Paths:|    0    |    0    |    0    |
+|          All Paths:|  4627   |  4373   |  2036   |
++--------------------+---------+---------+---------+
+
++----------------+-------------------------------+------------------+
+|                |              Real             |       Total      |
+|    DRVs        +------------------+------------+------------------|
+|                |  Nr nets(terms)  | Worst Vio  |  Nr nets(terms)  |
++----------------+------------------+------------+------------------+
+|   max_cap      |    232 (232)     |   -0.701   |    232 (232)     |
+|   max_tran     |    232 (233)     |   -1.167   |    232 (233)     |
+|   max_fanout   |      0 (0)       |     0      |      0 (0)       |
+|   max_length   |      0 (0)       |     0      |      0 (0)       |
++----------------+------------------+------------+------------------+
+
+Density: 76.363%
+Total number of glitch violations: 0
+------------------------------------------------------------
+Reported timing to dir ./timingReports
+Total CPU time: 1.0 sec
+Total Real time: 2.0 sec
+Total Memory Usage: 2195.5 Mbytes
+Reset AAE Options

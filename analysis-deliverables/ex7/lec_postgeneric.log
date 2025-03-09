@@ -1,0 +1,462 @@
+                          CONFORMAL (R)
+                   Version 19.10-s300 (24-Aug-2019) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2019. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 1264 days old. You can download the latest version from http://downloads.cadence.com.
+
+0
+// Command: usage -auto -elapse
+CPU time     : 0.10    seconds
+Elapse time  : 0       seconds
+Memory usage : 236.53  M bytes
+0
+// Command: set_verification_information post_elabv_post_genericv_db
+// Note: Verification information post_elabv_post_genericv_db does not exist. New directory created.
+// Verification information is set to /mnt/scratch_b/users/g/grigpavl/project-asic-2022/post_elabv_post_genericv_db.
+// Advanced reporting is enabled and the output is written to /mnt/scratch_b/users/g/grigpavl/project-asic-2022/post_elabv_post_genericv_db
+0
+// Command: read_implementation_information fv/picorv32 -golden post_elabv -revised post_genericv
+// Reading implementation information from fv/picorv32 ...
+================================================================================
+          Information Category                         Count
+--------------------------------------------------------------------------------
+     Sequential instance phase                          4050
+       Sequential optimization                           130
+        Sequential duplication                             0
+         Boundary optimization                            89
+            Synthesis equation                            14
+    Combinational loop breaker                             0
+                       Mapping                             0
+================================================================================
+// Note: Read implementation information successfully.
+0
+CPU time     : 0.29    seconds
+Elapse time  : 1       seconds
+Memory usage : 241.62  M bytes
+// Command: set_parallel_option -threads 1,4 -norelease_license
+// Number of threads is set to 1,4.
+0
+// Command: set_compare_options -threads 1,4
+Set computing threads of compare to 1,4.
+0
+// Command: set env(RC_VERSION)     "19.11-s087_1"
+19.11-s087_1
+// Command: set env(CDN_SYNTH_ROOT) "/mnt/apps/prebuilt/EDA/cadence/2019-20/RHELx86/GENUS/tools.lnx86"
+/mnt/apps/prebuilt/EDA/cadence/2019-20/RHELx86/GENUS/tools.lnx86
+// Command: set CDN_SYNTH_ROOT      "/mnt/apps/prebuilt/EDA/cadence/2019-20/RHELx86/GENUS/tools.lnx86"
+/mnt/apps/prebuilt/EDA/cadence/2019-20/RHELx86/GENUS/tools.lnx86
+// Command: set env(CW_DIR) "/mnt/apps/prebuilt/EDA/cadence/2019-20/RHELx86/GENUS/tools.lnx86/lib/chipware"
+/mnt/apps/prebuilt/EDA/cadence/2019-20/RHELx86/GENUS/tools.lnx86/lib/chipware
+// Command: set CW_DIR      "/mnt/apps/prebuilt/EDA/cadence/2019-20/RHELx86/GENUS/tools.lnx86/lib/chipware"
+/mnt/apps/prebuilt/EDA/cadence/2019-20/RHELx86/GENUS/tools.lnx86/lib/chipware
+// Command: set_undefined_cell black_box -noascend -both
+0
+// Command: add_search_path /mnt/apps/prebuilt/eda/designkits/GPDK/gsclib045/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/ -library -both
+0
+// Command: read_library -liberty -both /mnt/apps/prebuilt/eda/designkits/GPDK/gsclib045/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/fast_vdd1v0_basicCells.lib
+// Parsing file /mnt/apps/prebuilt/eda/designkits/GPDK/gsclib045/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/fast_vdd1v0_basicCells.lib ...
+// Warning: (RTL9.17) Cell doesn't have any output pins or all output pins are undriven (blackboxed) (occurrence:10)
+// Note: Read Liberty library successfully
+0
+CPU time     : 0.49    seconds
+Elapse time  : 1       seconds
+Memory usage : 267.35  M bytes
+// Command: set_undriven_signal 0 -golden
+0
+// Command: read_design -verilog95   -golden -lastmod -noelab /mnt/scratch_b/users/g/grigpavl/project-asic-2022/interm/synth/lec/post_elab.v
+// Parsing file /mnt/scratch_b/users/g/grigpavl/project-asic-2022/interm/synth/lec/post_elab.v ...
+0
+CPU time     : 0.75    seconds
+Elapse time  : 2       seconds
+Memory usage : 279.41  M bytes
+// Command: elaborate_design -golden -root {picorv32}
+// Golden root module is set to 'picorv32'
+// Warning: (RTL3.4) DFF/DLAT is with both asynchronous set and reset connections (occurrence:1)
+// Warning: (RTL6.1) X created due to the assignment of value X (occurrence:9)
+// Warning: (RTL14) Signal has input but it has no output (occurrence:222)
+// Warning: (RTL14.1) Fanout load of the signal is removed (occurrence:2)
+// Note: (VLG9.2) The `define macro is used (occurrence:1)
+// Warning: (DIR6.2) Supported compiler directive is detected (occurrence:99)
+// Note: (DIR6.3) Conditional compiler directive clause is effective (occurrence:33)
+// Warning: (IGN1.1) Initial construct is not supported. The entire initial construct will be ignored (occurrence:1)
+// Warning: (IGN2.1) Delay value(s) are ignored (occurrence:1)
+// Warning: (HRC3.10a) An input port is declared, but it is not completely used in the module (occurrence:63)
+0
+CPU time     : 0.89    seconds
+Elapse time  : 2       seconds
+Memory usage : 294.18  M bytes
+// Command: read_design -verilog95   -revised -lastmod -noelab /mnt/scratch_b/users/g/grigpavl/project-asic-2022/interm/synth/lec/post_generic.v
+// Parsing file /mnt/scratch_b/users/g/grigpavl/project-asic-2022/interm/synth/lec/post_generic.v ...
+0
+CPU time     : 1.40    seconds
+Elapse time  : 2       seconds
+Memory usage : 308.11  M bytes
+// Command: elaborate_design -revised -root {picorv32}
+// Revised root module is set to 'picorv32'
+// Warning: (RTL3.4) DFF/DLAT is with both asynchronous set and reset connections (occurrence:1)
+// Warning: (RTL14) Signal has input but it has no output (occurrence:38)
+// Note: (VLG9.2) The `define macro is used (occurrence:1)
+// Warning: (DIR6.2) Supported compiler directive is detected (occurrence:3)
+// Note: (DIR6.3) Conditional compiler directive clause is effective (occurrence:1)
+// Warning: (IGN1.1) Initial construct is not supported. The entire initial construct will be ignored (occurrence:1)
+// Warning: (IGN2.1) Delay value(s) are ignored (occurrence:1)
+// Warning: (HRC3.10a) An input port is declared, but it is not completely used in the module (occurrence:82)
+0
+CPU time     : 1.73    seconds
+Elapse time  : 3       seconds
+Memory usage : 325.11  M bytes
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules      4841            1974
+Library-cells        222               0
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT              102                  102
+OUTPUT             307                  307
+--------------------------------------------
+AND        *      7218                  163
+DFF        *      2090                 1960
+INV        *      2836                 9524
+MUX        *      6331                 3920
+NAND       *      5816                11500
+NOR        *      3844                   21
+ONEHOT     *       670                    0
+OR         *      1149                12643
+WIRE       *      2808                 1968
+XNOR       *       775                    0
+XOR        *      1635                    0
+------ word-level --------------------------
+WSEL       *       222                    0
+------ don't care --------------------------
+X-assignments      733                    0
+--------------------------------------------
+Total            35905                41699
+
+0
+// Command: report_black_box
+0
+// Command: set_flatten_model -seq_constant
+0
+// Command: set_flatten_model -seq_constant_x_to 0
+0
+// Command: set_flatten_model -nodff_to_dlat_zero
+0
+// Command: set_flatten_model -nodff_to_dlat_feedback
+0
+// Command: set_flatten_model -hier_seq_merge
+0
+// Command: set_analyze_option -auto -report_map
+0
+// Command: set_system_mode lec
+// Read in 12 merge group(s) from verification information.
+// Processing Golden ...
+// Modeling Golden ...
+// Warning: (F34) Converted 733 X assignment(s) as don't care(s)
+// (F21) Merged 12 DFF/DLAT(s) due to added instance equivalences (flatten)
+// Processing Revised ...
+// Modeling Revised ...
+// Balanced modeling (auto) mapped 3920 out of 4050 DFF/DLATs
+// (F18) Converted 80 DFF/DLAT(s) to ZERO/ONE
+CPU time     : 3.41    seconds
+Elapse time  : 4       seconds
+Memory usage : 348.86  M bytes
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 2499
+// Revised key points = 2369
+// Mapping key points ...
+// Warning: Golden has 37 unmapped key points
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            102    307    1960      2369    
+--------------------------------------------------------------------------------
+Revised           102    307    1960      2369    
+================================================================================
+// Note: A key point group is counted as one key point
+// Golden has 2 key point groups
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       81        81      
+Not-mapped        37        37      
+================================================================================
+// Warning: Key point mapping is incomplete
+CPU time     : 3.99    seconds
+Elapse time  : 5       seconds
+Memory usage : 348.86  M bytes
+// Running automatic setup...
+// Merged 35 DFF/DLAT(s) in (G)
+// Converted 1 DFF/DLAT(s) in (G) to ZERO/ONE
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            102    307    1960      2369    
+--------------------------------------------------------------------------------
+Revised           102    307    1960      2369    
+================================================================================
+// Note: A key point group is counted as one key point
+// Golden has 2 key point groups
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       117       117     
+Not-mapped        1         1       
+================================================================================
+// Note: A key point group is counted as one key point
+// Golden has 1 key point groups
+// Automatic setup finished.
+0
+CPU time     : 5.58    seconds
+Elapse time  : 6       seconds
+Memory usage : 354.98  M bytes
+// Command: report_unmapped_points -summary
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       117       117     
+Not-mapped        1         1       
+================================================================================
+// Note: A key point group is counted as one key point
+// Golden has 1 key point groups
+0
+// Command: report_unmapped_points -notmapped
+Unmapped point (not-mapped):
+  (G)   1042  DFF  /is_compare_reg/qi_reg
+
+1 unmapped points reported
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Not-mapped        1         1       
+================================================================================
+0
+// Command: add_compared_points -all
+// Warning: Golden has 1 unmapped key points which will not be compared
+// 2267 compared points added to compare list
+0
+// Command: compare
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           307    1960      2267    
+================================================================================
+Compare results of instance/output/pin equivalences and/or sequential merge      
+================================================================================
+Compared points      DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           47        47      
+================================================================================
+0
+CPU time     : 13.32   seconds
+Elapse time  : 16      seconds
+Memory usage : 450.01  M bytes
+// Command: report_compare_data -class nonequivalent -class abort -class notcompared
+0 Non-equivalent point(s) reported
+0 Abort point(s) reported
+0 Not-compared point(s) reported
+0 compared point(s) reported
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           307    1960      2267    
+================================================================================
+0 Non-equivalent point(s) reported
+0 Abort point(s) reported
+0 Not-compared point(s) reported
+0 compared point(s) reported
+Compare results of instance/output/pin equivalences and/or sequential merge      
+================================================================================
+Compared points      DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           47        47      
+================================================================================
+0
+// Command: report_verification -verbose
+================================================================================
+                            Verification Report
+--------------------------------------------------------------------------------
+Category                                                                  Count
+--------------------------------------------------------------------------------
+1. Non-standard modeling options used:                                      1
+     Tri-stated output:                                        checked
+     Revised X signals set to E:                               yes
+     Floating signals tied to Z:                               no *
+     Command "add clock" for clock-gating:                     not used
+--------------------------------------------------------------------------------
+2. Incomplete verification:                                                 0
+     All primary outputs are mapped:                           yes
+     Not-mapped DFF/DLAT is detected:                          no
+     All mapped points are added as compare points:            yes
+     All compared points are compared:                         yes
+     User added black box:                                     no
+     Black box mapped with different module name:              no
+     Empty module is not black boxed:                          no
+     Command "add ignore outputs" used:                        no
+     Always false constraints detected:                        no
+--------------------------------------------------------------------------------
+3. User modification to design:                                             0
+     Change gate type:                                         no
+     Change wire:                                              no
+     Primary input added by user:                              no
+--------------------------------------------------------------------------------
+4. Conformal Constraint Designer clock domain crossing checks recommended:  0
+     Multiple clocks in the design:                            no
+--------------------------------------------------------------------------------
+5. Design ambiguity:                                                        0
+     Duplicate module definition:                              no
+     Black box due to undefined cells:                         no
+     Golden design has abnormal ratio of unreachable gates:    no
+     Ratio of golden unreachable gates:                        1%
+     Revised design has abnormal ratio of unreachable gates:   no
+     Ratio of revised unreachable gates:                       0%
+     All primary input bus ordering is consistent:             yes
+     All primary output bus ordering is consistent:            yes
+--------------------------------------------------------------------------------
+6. Compare Results:                                                        PASS
+     Number of EQ compare points:                              2314
+     Number of NON-EQ compare points:                          0
+     Number of Aborted compare points:                         0
+     Number of Uncompared compare points :                     0
+================================================================================
+pass
+// Command: report_statistics
+Mapping and compare statistics
+================================================================================
+                     Compare Result       Golden            Revised
+--------------------------------------------------------------------------------
+Root module name                          picorv32          picorv32          
+
+Primary inputs                               102                102
+   Mapped                                    102                102
+
+Primary outputs                              307                307
+   Mapped                                    307                307
+      Equivalent                307
+
+State key points                            2090               1960
+   Mapped                                   1960               1960
+      Equivalent               1960
+   Unmapped                                  118                  0
+      Extra                                    1                  0
+      Unreachable                            117                  0
+   Merged                                     47                  0
+================================================================================
+Compare results of instance/output/pin equivalences and/or sequential merge      
+================================================================================
+Compared points      DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           47        47      
+================================================================================
+0
+// Command: write_verification_information
+// Verification information is written to post_elabv_post_genericv_db.
+0
+// Command: report_verification_information
+// Generating reports on verification information at /mnt/scratch_b/users/g/grigpavl/project-asic-2022/post_elabv_post_genericv_db...
+LEC run scores:
+================================================================================
+Step                Score     Range          
+--------------------------------------------------------------------------------
+result_status       10        10             
+runtime             10        10             
+mapping             10        10             
+sequential_constant 5         10             
+sequential_merge    5         10             
+sequential_phase    10        10             
+datapath_analysis   5         10             
+combinational_loop  5         10             
+mismatch_detection  5         10             
+overall             65        90             
+================================================================================
+LEC results versus attributes:
+================================================================================
+Attribute           Total     Inconsistency  Combined Table                
+--------------------------------------------------------------------------------
+sequential_constant 129       48             sequential_constant.json      
+sequential_merge    59        12             sequential_merge.json         
+sequential_phase    1960      0              sequential_phase.json         
+================================================================================
+The tables can be viewed directly using web interface.
+// Done with reporting verification information.
+0
+// Command: set lec_version_required "18.20330"
+18.20330
+// Command: if {$lec_version >= $lec_version_required} {
+//              report_implementation_information
+//          }
+// Command: report_implementation_information
+// Reporting implementation information...
+// Information summary:
+================================================================================
+          Information Category       Total        Used      Unused    Rejected
+--------------------------------------------------------------------------------
+     Sequential instance phase        4050           0        4050           0
+           Sequential constant          48           0          48           0
+              Sequential merge          12           0          12           0
+        Sequential unreachable          70           0          70           0
+        Sequential duplication           0           0           0           0
+         Boundary optimization          89           0          89           0
+            Synthesis equation          14          14           0           0
+    Combinational loop breaker           0           0           0           0
+================================================================================
+0
+// Command: puts "No of compare points = [get_compare_points -count]"
+// Command: get_compare_points -count
+No of compare points = 2314
+// Command: puts "No of diff points    = [get_compare_points -NONequivalent -count]"
+// Command: get_compare_points -NONequivalent -count
+No of diff points    = 0
+// Command: puts "No of abort points   = [get_compare_points -abort -count]"
+// Command: get_compare_points -abort -count
+No of abort points   = 0
+// Command: puts "No of unknown points = [get_compare_points -unknown -count]"
+// Command: get_compare_points -unknown -count
+No of unknown points = 0
+// Command: if {[get_compare_points -count] == 0} {
+//              puts "---------------------------------"
+//              puts "ERROR: No compare points detected"
+//              puts "---------------------------------"
+//          }
+// Command: get_compare_points -count
+// Command: if {[get_compare_points -NONequivalent -count] > 0} {
+//              puts "------------------------------------"
+//              puts "ERROR: Different Key Points detected"
+//              puts "------------------------------------"
+//          }
+// Command: get_compare_points -NONequivalent -count
+// Command: if {[get_compare_points -abort -count] > 0} {
+//              puts "-----------------------------"
+//              puts "ERROR: Abort Points detected "
+//              puts "-----------------------------"
+//          }
+// Command: get_compare_points -abort -count
+// Command: if {[get_compare_points -unknown -count] > 0} {
+//              puts "----------------------------------"
+//              puts "ERROR: Unknown Key Points detected"
+//              puts "----------------------------------"
+//          }
+// Command: get_compare_points -unknown -count
+// Command: vpxmode
+// Command: exit -f

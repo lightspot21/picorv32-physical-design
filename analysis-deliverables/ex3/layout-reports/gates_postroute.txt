@@ -1,0 +1,2 @@
+Gate area 1.0260 um^2
+Level 0 Module picorv32                                 Gates=     29307 Cells=    9191 Area=   30069.7 um^2

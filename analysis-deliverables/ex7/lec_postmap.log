@@ -1,0 +1,208 @@
+                          CONFORMAL (R)
+                   Version 19.10-s300 (24-Aug-2019) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2019. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 1264 days old. You can download the latest version from http://downloads.cadence.com.
+
+0
+// Command: usage -auto -elapse
+CPU time     : 0.12    seconds
+Elapse time  : 0       seconds
+Memory usage : 236.53  M bytes
+0
+// Command: set_verification_information post_genericv_post_mapv_db
+// Note: Verification information post_genericv_post_mapv_db does not exist. New directory created.
+// Verification information is set to /mnt/scratch_b/users/g/grigpavl/project-asic-2022/post_genericv_post_mapv_db.
+// Advanced reporting is enabled and the output is written to /mnt/scratch_b/users/g/grigpavl/project-asic-2022/post_genericv_post_mapv_db
+0
+// Command: read_implementation_information fv/picorv32 -golden post_genericv -revised post_mapv
+// Reading implementation information from fv/picorv32 ...
+================================================================================
+          Information Category                         Count
+--------------------------------------------------------------------------------
+     Sequential instance phase                          3920
+       Sequential optimization                             0
+        Sequential duplication                             0
+         Boundary optimization                            89
+            Synthesis equation                            13
+    Combinational loop breaker                             0
+                       Mapping                             0
+================================================================================
+// Note: Read implementation information successfully.
+0
+CPU time     : 0.30    seconds
+Elapse time  : 1       seconds
+Memory usage : 241.29  M bytes
+// Command: set_parallel_option -threads 1,4 -norelease_license
+// Number of threads is set to 1,4.
+0
+// Command: set_compare_options -threads 1,4
+Set computing threads of compare to 1,4.
+0
+// Command: set env(RC_VERSION)     "19.11-s087_1"
+19.11-s087_1
+// Command: set env(CDN_SYNTH_ROOT) "/mnt/apps/prebuilt/EDA/cadence/2019-20/RHELx86/GENUS/tools.lnx86"
+/mnt/apps/prebuilt/EDA/cadence/2019-20/RHELx86/GENUS/tools.lnx86
+// Command: set CDN_SYNTH_ROOT      "/mnt/apps/prebuilt/EDA/cadence/2019-20/RHELx86/GENUS/tools.lnx86"
+/mnt/apps/prebuilt/EDA/cadence/2019-20/RHELx86/GENUS/tools.lnx86
+// Command: set env(CW_DIR) "/mnt/apps/prebuilt/EDA/cadence/2019-20/RHELx86/GENUS/tools.lnx86/lib/chipware"
+/mnt/apps/prebuilt/EDA/cadence/2019-20/RHELx86/GENUS/tools.lnx86/lib/chipware
+// Command: set CW_DIR      "/mnt/apps/prebuilt/EDA/cadence/2019-20/RHELx86/GENUS/tools.lnx86/lib/chipware"
+/mnt/apps/prebuilt/EDA/cadence/2019-20/RHELx86/GENUS/tools.lnx86/lib/chipware
+// Command: set_undefined_cell black_box -noascend -both
+0
+// Command: add_search_path /mnt/apps/prebuilt/eda/designkits/GPDK/gsclib045/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/ -library -both
+0
+// Command: read_library -liberty -both /mnt/apps/prebuilt/eda/designkits/GPDK/gsclib045/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/fast_vdd1v0_basicCells.lib
+// Parsing file /mnt/apps/prebuilt/eda/designkits/GPDK/gsclib045/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/fast_vdd1v0_basicCells.lib ...
+// Warning: (RTL9.17) Cell doesn't have any output pins or all output pins are undriven (blackboxed) (occurrence:10)
+// Note: Read Liberty library successfully
+0
+CPU time     : 0.50    seconds
+Elapse time  : 1       seconds
+Memory usage : 267.01  M bytes
+// Command: read_design -verilog95   -golden -lastmod -noelab /mnt/scratch_b/users/g/grigpavl/project-asic-2022/interm/synth/lec/post_generic.v
+// Parsing file /mnt/scratch_b/users/g/grigpavl/project-asic-2022/interm/synth/lec/post_generic.v ...
+0
+CPU time     : 1.01    seconds
+Elapse time  : 2       seconds
+Memory usage : 293.31  M bytes
+// Command: elaborate_design -golden -root {picorv32}
+// Golden root module is set to 'picorv32'
+// Warning: (RTL3.4) DFF/DLAT is with both asynchronous set and reset connections (occurrence:1)
+// Warning: (RTL14) Signal has input but it has no output (occurrence:38)
+// Note: (VLG9.2) The `define macro is used (occurrence:1)
+// Warning: (DIR6.2) Supported compiler directive is detected (occurrence:3)
+// Note: (DIR6.3) Conditional compiler directive clause is effective (occurrence:1)
+// Warning: (IGN1.1) Initial construct is not supported. The entire initial construct will be ignored (occurrence:1)
+// Warning: (IGN2.1) Delay value(s) are ignored (occurrence:1)
+// Warning: (HRC3.10a) An input port is declared, but it is not completely used in the module (occurrence:82)
+0
+CPU time     : 1.27    seconds
+Elapse time  : 2       seconds
+Memory usage : 310.33  M bytes
+// Command: read_design -verilog95   -revised -lastmod -noelab /mnt/scratch_b/users/g/grigpavl/project-asic-2022/interm/synth/lec/post_map.v
+// Parsing file /mnt/scratch_b/users/g/grigpavl/project-asic-2022/interm/synth/lec/post_map.v ...
+0
+CPU time     : 1.60    seconds
+Elapse time  : 2       seconds
+Memory usage : 310.33  M bytes
+// Command: elaborate_design -revised -root {picorv32}
+// Revised root module is set to 'picorv32'
+// Warning: (RTL14) Signal has input but it has no output (occurrence:2)
+// Warning: (RTL14.1) Fanout load of the signal is removed (occurrence:2)
+// Warning: (HRC3.10a) An input port is declared, but it is not completely used in the module (occurrence:32)
+0
+CPU time     : 1.77    seconds
+Elapse time  : 2       seconds
+Memory usage : 310.33  M bytes
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules      1974               1
+Library-cells          0            8920
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT              102                  102
+OUTPUT             307                  307
+--------------------------------------------
+AND        *       163                 9454
+BUF        *         0                  303
+DFF               1960                 1960
+INV        *      9524                 2616
+MUX        *      3920                    0
+NAND       *     11500                 1622
+NOR        *        21                 2523
+OR         *     12643                 3640
+WIRE       *      1968                    0
+XNOR       *         0                  478
+XOR        *         0                  771
+--------------------------------------------
+Total            41699                23367
+
+0
+// Command: report_black_box
+0
+// Command: set_flatten_model -seq_constant
+0
+// Command: set_flatten_model -seq_constant_x_to 0
+0
+// Command: set_flatten_model -nodff_to_dlat_zero
+0
+// Command: set_flatten_model -nodff_to_dlat_feedback
+0
+// Command: set_flatten_model -hier_seq_merge
+0
+// Command: set_analyze_option -auto -report_map
+0
+// Command: set_system_mode lec
+// Warning: 2 sequential merge information is loaded from /mnt/scratch_b/users/g/grigpavl/project-asic-2022/interm/synth/lec/post_map.v
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// Balanced modeling (auto) mapped 3920 out of 3920 DFF/DLATs
+CPU time     : 3.46    seconds
+Elapse time  : 4       seconds
+Memory usage : 340.39  M bytes
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            102    307    1960      2369    
+--------------------------------------------------------------------------------
+Revised           102    307    1960      2369    
+================================================================================
+CPU time     : 4.24    seconds
+Elapse time  : 5       seconds
+Memory usage : 340.39  M bytes
+// Running automatic setup...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            102    307    1960      2369    
+--------------------------------------------------------------------------------
+Revised           102    307    1960      2369    
+================================================================================
+// Automatic setup finished.
+0
+CPU time     : 5.74    seconds
+Elapse time  : 7       seconds
+Memory usage : 340.39  M bytes
+// Command: report_unmapped_points -summary
+There is no unmapped point
+0
+// Command: report_unmapped_points -notmapped
+There is no unmapped point
+0
+// Command: add_compared_points -all
+// 2267 compared points added to compare list
+0
+// Command: compare
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           307    1909      2216    
+--------------------------------------------------------------------------------
+Abort                0      51        51      
+================================================================================
+CPU time     : 162.75  seconds
+Elapse time  : 148     seconds
+Memory usage : 427.42  M bytes
+// Resolving aborts by analyze abort...
+Control-C received...
+Control-C received (command will stop at the earliest feasible point) ...
+CTRL_C received when running remote tasks.
+Waiting for remaining tasks to be terminated.
+// Multi-threaded analyze abort failed, switch to non-threaded version...

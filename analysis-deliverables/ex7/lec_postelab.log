@@ -1,0 +1,2034 @@
+                          CONFORMAL (R)
+                   Version 19.10-s300 (24-Aug-2019) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2019. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 1264 days old. You can download the latest version from http://downloads.cadence.com.
+
+0
+// Command: usage -auto -elapse
+CPU time     : 0.11    seconds
+Elapse time  : 1       seconds
+Memory usage : 236.53  M bytes
+0
+// Command: set_verification_information rtl_post_elabv_db
+// Note: Verification information rtl_post_elabv_db does not exist. New directory created.
+// Verification information is set to /mnt/scratch_b/users/g/grigpavl/project-asic-2022/rtl_post_elabv_db.
+// Advanced reporting is enabled and the output is written to /mnt/scratch_b/users/g/grigpavl/project-asic-2022/rtl_post_elabv_db
+0
+// Command: read_implementation_information fv/picorv32 -revised post_elabv
+// Reading implementation information from fv/picorv32 ...
+================================================================================
+          Information Category                         Count
+--------------------------------------------------------------------------------
+     Sequential instance phase                          2090
+       Sequential optimization                            36
+        Sequential duplication                             0
+         Boundary optimization                             0
+            Synthesis equation                             1
+    Combinational loop breaker                             0
+                       Mapping                             0
+================================================================================
+// Note: Read implementation information successfully.
+0
+// Command: set_parallel_option -threads 1,4 -norelease_license
+// Number of threads is set to 1,4.
+0
+// Command: set_compare_options -threads 1,4
+Set computing threads of compare to 1,4.
+0
+// Command: set env(RC_VERSION)     "19.11-s087_1"
+19.11-s087_1
+// Command: set env(CDN_SYNTH_ROOT) "/mnt/apps/prebuilt/EDA/cadence/2019-20/RHELx86/GENUS/tools.lnx86"
+/mnt/apps/prebuilt/EDA/cadence/2019-20/RHELx86/GENUS/tools.lnx86
+// Command: set CDN_SYNTH_ROOT      "/mnt/apps/prebuilt/EDA/cadence/2019-20/RHELx86/GENUS/tools.lnx86"
+/mnt/apps/prebuilt/EDA/cadence/2019-20/RHELx86/GENUS/tools.lnx86
+// Command: set env(CW_DIR) "/mnt/apps/prebuilt/EDA/cadence/2019-20/RHELx86/GENUS/tools.lnx86/lib/chipware"
+/mnt/apps/prebuilt/EDA/cadence/2019-20/RHELx86/GENUS/tools.lnx86/lib/chipware
+// Command: set CW_DIR      "/mnt/apps/prebuilt/EDA/cadence/2019-20/RHELx86/GENUS/tools.lnx86/lib/chipware"
+/mnt/apps/prebuilt/EDA/cadence/2019-20/RHELx86/GENUS/tools.lnx86/lib/chipware
+// Command: set_undefined_cell black_box -noascend -both
+0
+// Command: add_search_path /mnt/apps/prebuilt/eda/designkits/GPDK/gsclib045/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/ -library -both
+0
+// Command: read_library -liberty -both /mnt/apps/prebuilt/eda/designkits/GPDK/gsclib045/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/fast_vdd1v0_basicCells.lib
+// Parsing file /mnt/apps/prebuilt/eda/designkits/GPDK/gsclib045/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/fast_vdd1v0_basicCells.lib ...
+// Warning: (RTL9.17) Cell doesn't have any output pins or all output pins are undriven (blackboxed) (occurrence:10)
+// Note: Read Liberty library successfully
+0
+CPU time     : 0.40    seconds
+Elapse time  : 1       seconds
+Memory usage : 264.82  M bytes
+// Command: set_naming_style rc -golden
+0
+// Command: set_naming_rule "%s\[%d\]" -instance_array -golden
+0
+// Command: set_naming_rule "%s_reg" -register -golden
+0
+// Command: set_naming_rule "%L.%s" "%L\[%d\].%s" "%s" -instance -golden
+0
+// Command: set_naming_rule "%L.%s" "%L\[%d\].%s" "%s" -variable -golden
+0
+// Command: set lec_version_required "17.20301"
+17.20301
+// Command: if {$lec_version >= $lec_version_required} {
+//              set_hdl_options -const_port_extend
+//          }
+// Command: set_hdl_options -const_port_extend
+0
+// Command: set_hdl_options -VERILOG_INCLUDE_DIR "incdir:sep:src:cwd"
+0
+// Command: delete_search_path -all -design -golden
+0
+// Command: add_search_path /mnt/scratch_b/users/g/grigpavl/project-asic-2022/data -design -golden
+0
+// Command: read_design  -define SYNTHESIS  -merge bbox -golden -lastmod -noelab -verilog2k  /mnt/scratch_b/users/g/grigpavl/project-asic-2022/data/picorv32.v
+// Parsing file /mnt/scratch_b/users/g/grigpavl/project-asic-2022/data/picorv32.v ...
+0
+// Command: elaborate_design -golden -root {picorv32} -rootonly -rootonly  
+// Golden root module is set to 'picorv32'
+// Warning: (RTL1.2) Variable/signal is assigned by multiple non-blocking assignments (occurrence:104)
+// Warning: (RTL1.4) Assignment with LHS bit width is greater than RHS bit width (occurrence:19)
+// Warning: (RTL1.5a) Assignment with RHS bit width is greater than LHS bit width (occurrence:12)
+// Warning: (RTL1.5b) Potential loss of RHS msb or carry-out bit (occurrence:3)
+// Warning: (RTL1.6) Blocking assignment is in sequential always block (occurrence:3)
+// Warning: (RTL2.2) Variable is referenced but never assigned (occurrence:1)
+// Warning: (RTL5.1) Overlapped case items are in parallel case statement (occurrence:15)
+// Warning: (RTL5.3) Case expressions/items are resized (occurrence:2)
+// Note: (RTL5.4) Partial case items are in full case statement (occurrence:10)
+// Warning: (RTL6.1) X created due to the assignment of value X (occurrence:11)
+// Warning: (RTL7.10a) Comparison with different data sizes (occurrence:6)
+// Warning: (RTL7.10b) Ternary branches have different data sizes (occurrence:3)
+// Warning: (RTL7.11) Implicit signed expression is converted to unsigned (occurrence:2)
+// Warning: (RTL7.13) Logical operator is applied to multiple-bit operand (occurrence:28)
+// Warning: (RTL8.3) Unreachable DFF/DLAT is removed (occurrence:721)
+// Warning: (RTL14) Signal has input but it has no output (occurrence:499)
+// Warning: (RTL14.1) Fanout load of the signal is removed (occurrence:325)
+// Warning: (RTL25) Non-automatic task/function (occurrence:1)
+// Warning: (VLG3.1) Unsized constant(s) with leading X/Z value is extended beyond 32 bits (occurrence:1)
+// Note: (VLG9.2) The `define macro is used (occurrence:5)
+// Warning: (DIR2.1) full_case directive is detected (occurrence:10)
+// Warning: (DIR2.2) parallel_case directive is detected (occurrence:16)
+// Warning: (DIR4.2) Design includes one or more HDL directives or pragmas that Conformal supports (occurrence:26)
+// Warning: (DIR6.1) Ignored compiler directive is detected (occurrence:1)
+// Warning: (DIR6.2) Supported compiler directive is detected (occurrence:64)
+// Note: (DIR6.3) Conditional compiler directive clause is effective (occurrence:11)
+// Warning: (IGN1.1) Initial construct is not supported. The entire initial construct will be ignored (occurrence:1)
+// Warning: (HRC3.10a) An input port is declared, but it is not completely used in the module (occurrence:62)
+// Warning: (HRC3.16) A wire is declared, but not used in the module (occurrence:15)
+0
+CPU time     : 0.57    seconds
+Elapse time  : 2       seconds
+Memory usage : 285.42  M bytes
+// Command: read_design -verilog95   -revised -lastmod -noelab /mnt/scratch_b/users/g/grigpavl/project-asic-2022/interm/synth/lec/post_elab.v
+// Parsing file /mnt/scratch_b/users/g/grigpavl/project-asic-2022/interm/synth/lec/post_elab.v ...
+0
+CPU time     : 0.84    seconds
+Elapse time  : 2       seconds
+Memory usage : 298.02  M bytes
+// Command: elaborate_design -revised -root {picorv32}
+// Revised root module is set to 'picorv32'
+// Warning: (RTL3.4) DFF/DLAT is with both asynchronous set and reset connections (occurrence:1)
+// Warning: (RTL6.1) X created due to the assignment of value X (occurrence:9)
+// Warning: (RTL14) Signal has input but it has no output (occurrence:222)
+// Warning: (RTL14.1) Fanout load of the signal is removed (occurrence:2)
+// Note: (VLG9.2) The `define macro is used (occurrence:1)
+// Warning: (DIR6.2) Supported compiler directive is detected (occurrence:99)
+// Note: (DIR6.3) Conditional compiler directive clause is effective (occurrence:33)
+// Warning: (IGN1.1) Initial construct is not supported. The entire initial construct will be ignored (occurrence:1)
+// Warning: (IGN2.1) Delay value(s) are ignored (occurrence:1)
+// Warning: (HRC3.10a) An input port is declared, but it is not completely used in the module (occurrence:63)
+0
+CPU time     : 1.04    seconds
+Elapse time  : 2       seconds
+Memory usage : 312.52  M bytes
+// Command: uniquify -all -nolib -golden
+Uniquified 3 instance(s) referring to module 'VDW_minus_32' in Golden
+Uniquified 1 instance(s) referring to module 'VDW_mult_wall_s33_s33_66' in Golden
+Uniquified 4 instance(s) referring to module 'VDW_ADD_32_1_0' in Golden
+Uniquified 2 instance(s) referring to module 'VDW_SUB_32_1_0' in Golden
+Uniquified 4 module(s)
+0
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules        13            4841
+Library-cells        405             222
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT              102                  102
+OUTPUT             307                  307
+--------------------------------------------
+AND        *     10206                 7218
+BUF        *        88                    0
+DFF               2090                 2090
+INV        *       547                 2836
+MUX        *      5166                 6331
+NAND       *        20                 5816
+NOR        *       643                 3844
+ONEHOT     *         0                  670
+OR         *      2353                 1149
+WIRE       *        67                 2808
+XNOR       *       692                  775
+XOR        *      1976                 1635
+------ word-level --------------------------
+ADD        *        11                    0
+EQ         *         1                    0
+GE         *         1                    0
+LE         *         1                    0
+LT         *         2                    0
+MULT       *         1                    0
+NE         *         1                    0
+SLL        *         1                    0
+SUBTRACT   *         9                    0
+WAND       *         4                    0
+WMUX       *       245                    0
+WOR        *         2                    0
+WSEL       *       135                  222
+WXOR       *         1                    0
+------ don't care --------------------------
+X-assignments     1218                  733
+--------------------------------------------
+Total            25066                35905
+
+0
+// Command: report_black_box
+0
+// Command: set_flatten_model -seq_constant
+0
+// Command: set_flatten_model -seq_constant_x_to 0
+0
+// Command: set_flatten_model -nodff_to_dlat_zero
+0
+// Command: set_flatten_model -nodff_to_dlat_feedback
+0
+// Command: set_flatten_model -hier_seq_merge
+0
+// Command: set_analyze_option -auto -report_map
+0
+// Command: write_hier_compare_dofile hier_tmp1.lec.do -noexact_pin_match -constraint -usage -replace -balanced_extraction -input_output_pin_equivalence -prepend_string "report_design_data; report_unmapped_points -notmapped; analyze_datapath -module -verbose ; analyze_datapath   -verbose"
+// Flattening Golden and Revised designs ...
+// Command: usage
+CPU time     : 2.74    seconds
+Memory usage : 349.07  M bytes
+// Starting hierarchical dofile generation ...
+// Total Matching Module Instance Pairs =  3
+// Module Instantiation Ratio in Golden = 1.00
+// Module Instantiation Ratio in Revised = 1.00
+// Gathering Instance Boundary Information ...
+// Extracting Constraints in Golden...
+// Extracting Constraints in Revised...
+// Balancing Constraints ...
+// Resolving Constraints ...
+// Writing hierarchical dofile ...
+3 module pairs are written for hierarchical comparison
+// Note: For additional reporting on 'not written' modules, see the 'VERBOSE REPORTING'
+   section at the end of the hierarchical dofile, or just use the '-verbose' option
+   with 'write hier_compare dofile' command
+0
+CPU time     : 3.45    seconds
+Elapse time  : 4       seconds
+Memory usage : 355.70  M bytes
+// Command: run_hier_compare hier_tmp1.lec.do -dynamic_hierarchy
+// Running Module picorv32_pcpi_fast_mul and picorv32_pcpi_fast_mul
+// Command: set_root_module picorv32_pcpi_fast_mul -Golden
+// Command: set_root_module picorv32_pcpi_fast_mul -Golden
+0
+// Command: set_root_module picorv32_pcpi_fast_mul -Revised
+// Command: set_root_module picorv32_pcpi_fast_mul -Revised
+0
+// Command: set_module_property -instance /genblk1.pcpi_mul -Golden
+// Command: set_module_property -instance /genblk1.pcpi_mul -Golden
+0
+// Command: set_module_property -instance /genblk1.pcpi_mul -Revised
+// Command: set_module_property -instance /genblk1.pcpi_mul -Revised
+0
+// Command: report_black_box -NOHidden
+// Command: report_black_box -NOHidden
+0
+// Applying constraints to module boundaries ...
+// 1 Golden and 1 Revised pins constrained to constant value
+// 16 Golden and 16 Revised pins marked as unreachable
+// 1 Golden and 1 Revised pin equivalences applied
+// Command: set_system_mode lec
+// Command: set_system_mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// Warning: (F34.3) Converted 4 X assignment(s) as E(s)
+// Balanced modeling (auto) mapped 268 out of 268 DFF/DLATs
+CPU time     : 3.62    seconds
+Elapse time  : 5       seconds
+Memory usage : 355.70  M bytes
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            99     34     133       266     
+--------------------------------------------------------------------------------
+Revised           99     34     133       266     
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+// Running automatic setup...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            99     34     133       266     
+--------------------------------------------------------------------------------
+Revised           99     34     133       266     
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+// Automatic setup finished.
+0
+CPU time     : 3.84    seconds
+Elapse time  : 5       seconds
+Memory usage : 355.70  M bytes
+// Command: report_design_data; report_unmapped_points -notmapped; analyze_datapath -module -verbose ; analyze_datapath   -verbose
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules         2             197
+Library-cells         10               0
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT               99                   99
+OUTPUT              35                   35
+--------------------------------------------
+AND        *      2796                  106
+BUF        *         4                    0
+DFF                134                  134
+INV        *        92                  349
+MUX        *       167                  315
+NAND       *        17                 3835
+NOR        *       532                  409
+ONEHOT     *         0                    4
+OR         *       578                   22
+WIRE       *         3                  140
+XNOR       *       591                   62
+XOR        *      1188                 1583
+------ word-level --------------------------
+MULT       *         1                    0
+WMUX       *         6                    0
+WSEL       *         4                    0
+------ don't care --------------------------
+X-assignments        0                    4
+--------------------------------------------
+Total             6102                 6963
+
+// Command: report_unmapped_points -notmapped
+
+0 unmapped points reported
+// Command: analyze_datapath -module -verbose
+// Note: Multithreaded module datapath analysis (MDP) is enabled
+// 1 datapath module is detected based on verification information.
+// Note: mul_2366_47 : quality evaluated 100% success 
+// Command: analyze_datapath -verbose
+// Note: mul_2366_47: quality evaluated 100% success
+0
+CPU time     : 13.55   seconds
+Elapse time  : 16      seconds
+Memory usage : 435.70  M bytes
+// Command: add_compared_points -all
+// Command: add_compared_points -all
+// 167 compared points added to compare list
+0
+// Command: compare -noneq_stop 1  -threads 1,4
+// Compare will stop on the 1st non-equivalent point
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           34     133       167     
+================================================================================
+CPU time     : 14.31   seconds
+Elapse time  : 22      seconds
+Memory usage : 435.70  M bytes
+// Command: analyze abort -compare
+There is no abort/specified point to be analyzed.
+// Command: save_hier_compare_result
+// Command: save_hier_compare_result
+0
+// Command: set_system_mode setup
+// Command: set_system_mode setup
+0
+// Command: add_black_box picorv32_pcpi_fast_mul -module -hier -Golden
+// Command: add_black_box picorv32_pcpi_fast_mul -module -hier -Golden
+0
+// Command: add_black_box picorv32_pcpi_fast_mul -module -hier -Revised
+// Command: add_black_box picorv32_pcpi_fast_mul -module -hier -Revised
+0
+// Command: usage
+// Command: usage
+CPU time     : 14.34   seconds
+Memory usage : 435.70  M bytes
+0
+Processed 1 out of 3 module pairs	EQ: 1	NEQ: 0	ABORT: 0
+// Running Module picorv32_pcpi_div and picorv32_pcpi_div
+// Command: set_root_module picorv32_pcpi_div -Golden
+// Command: set_root_module picorv32_pcpi_div -Golden
+0
+// Command: set_root_module picorv32_pcpi_div -Revised
+// Command: set_root_module picorv32_pcpi_div -Revised
+0
+// Command: set_module_property -instance /genblk2.pcpi_div -Golden
+// Command: set_module_property -instance /genblk2.pcpi_div -Golden
+0
+// Command: set_module_property -instance /genblk2.pcpi_div -Revised
+// Command: set_module_property -instance /genblk2.pcpi_div -Revised
+0
+// Command: report_black_box -NOHidden
+// Command: report_black_box -NOHidden
+0
+// Applying constraints to module boundaries ...
+// 15 Golden and 15 Revised pins marked as unreachable
+// Command: set_system_mode lec
+// Command: set_system_mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Warning: (F34) Converted 32 X assignment(s) as don't care(s)
+// Processing Revised ...
+// Modeling Revised ...
+// Warning: (F34.3) Converted 37 X assignment(s) as E(s)
+// Balanced modeling (auto) mapped 402 out of 402 DFF/DLATs
+CPU time     : 14.52   seconds
+Elapse time  : 22      seconds
+Memory usage : 436.58  M bytes
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 335
+// Revised key points = 336
+// Mapping key points ...
+// Warning: Revised has 1 unmapped key points
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            99     35     201       335     
+--------------------------------------------------------------------------------
+Revised           99     35     201       335     
+================================================================================
+Unmapped points:
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   E         Total   
+--------------------------------------------------------------------------------
+Not-mapped        1         1       
+================================================================================
+// Warning: Key point mapping is incomplete
+// Running automatic setup...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            99     35     201       335     
+--------------------------------------------------------------------------------
+Revised           99     35     201       335     
+================================================================================
+Unmapped points:
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   E         Total   
+--------------------------------------------------------------------------------
+Not-mapped        1         1       
+================================================================================
+// Automatic setup finished.
+0
+// Command: report_design_data; report_unmapped_points -notmapped; analyze_datapath -module -verbose ; analyze_datapath   -verbose
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules         5             568
+Library-cells         26               0
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT               99                   99
+OUTPUT              35                   35
+--------------------------------------------
+AND        *       340                  239
+BUF        *         4                    0
+DFF                201                  201
+INV        *       239                  484
+MUX        *       671                  737
+NAND       *         0                  416
+NOR        *         4                  402
+ONEHOT     *         0                   36
+OR         *       148                   76
+WIRE       *         0                  267
+XNOR       *        31                  156
+XOR        *       188                    5
+------ word-level --------------------------
+LE         *         1                    0
+NE         *         1                    0
+SUBTRACT   *         5                    0
+WMUX       *        18                    0
+WOR        *         1                    0
+WSEL       *         4                    0
+------ don't care --------------------------
+X-assignments       32                   37
+--------------------------------------------
+Total             1858                 3056
+
+// Command: report_unmapped_points -notmapped
+Unmapped point (not-mapped):
+  (R)   336  E    /logicX_inst/n16119
+
+1 unmapped points reported
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   E         Total   
+--------------------------------------------------------------------------------
+Not-mapped        1         1       
+================================================================================
+// Command: analyze_datapath -module -verbose
+// Note: Multithreaded module datapath analysis (MDP) is enabled
+// Warning: No eligible datapath module in the design. Skip ...
+// Command: analyze_datapath -verbose
+0
+// Command: add_compared_points -all
+// Command: add_compared_points -all
+// 236 compared points added to compare list
+0
+// Command: compare -noneq_stop 1  -threads 1,4
+// Compare will stop on the 1st non-equivalent point
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           35     201       236     
+================================================================================
+CPU time     : 17.16   seconds
+Elapse time  : 29      seconds
+Memory usage : 436.58  M bytes
+// Command: analyze abort -compare
+There is no abort/specified point to be analyzed.
+// Command: save_hier_compare_result
+// Command: save_hier_compare_result
+0
+// Command: set_system_mode setup
+// Command: set_system_mode setup
+0
+// Command: add_black_box picorv32_pcpi_div -module -hier -Golden
+// Command: add_black_box picorv32_pcpi_div -module -hier -Golden
+0
+// Command: add_black_box picorv32_pcpi_div -module -hier -Revised
+// Command: add_black_box picorv32_pcpi_div -module -hier -Revised
+0
+// Command: usage
+// Command: usage
+CPU time     : 17.20   seconds
+Memory usage : 436.58  M bytes
+0
+Processed 2 out of 3 module pairs	EQ: 2	NEQ: 0	ABORT: 0
+// Running Module picorv32 and picorv32
+// Command: set_root_module picorv32 -Golden
+// Command: set_root_module picorv32 -Golden
+// Warning: Total black box modules referenced in Golden = 2
+0
+// Command: set_root_module picorv32 -Revised
+// Command: set_root_module picorv32 -Revised
+// Warning: Total black box modules referenced in Revised = 2
+0
+// Command: set_module_property -instance / -Golden
+// Command: set_module_property -instance / -Golden
+0
+// Command: set_module_property -instance / -Revised
+// Command: set_module_property -instance / -Revised
+0
+// Command: report_black_box -NOHidden
+// Command: report_black_box -NOHidden
+HIER: (G R) picorv32_pcpi_div
+HIER: (G R) picorv32_pcpi_fast_mul
+0
+// Applying constraints to module boundaries ...
+// 2 Golden and 2 Revised pins constrained to constant value
+// 32 Golden and 32 Revised pins marked as unreachable
+// Command: set_system_mode lec
+// Command: set_system_mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Warning: (F34) Converted 1186 X assignment(s) as don't care(s)
+// Processing Revised ...
+// Modeling Revised ...
+// Warning: (F34.3) Converted 692 X assignment(s) as E(s)
+// Balanced modeling (auto) mapped 3510 out of 3510 DFF/DLATs
+CPU time     : 18.57   seconds
+Elapse time  : 30      seconds
+Memory usage : 450.69  M bytes
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 2166
+// Revised key points = 2734
+// Mapping key points ...
+// Warning: Revised has 565 unmapped key points
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF    BBOX      Total   
+--------------------------------------------------------------------------------
+Golden            102    307    1755   2         2166    
+--------------------------------------------------------------------------------
+Revised           102    307    1755   2         2166    
+================================================================================
+Unmapped points:
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   E         Total   
+--------------------------------------------------------------------------------
+Unreachable       3         3       
+Not-mapped        565       565     
+================================================================================
+// Warning: Key point mapping is incomplete
+CPU time     : 19.09   seconds
+Elapse time  : 31      seconds
+Memory usage : 450.69  M bytes
+// Running automatic setup...
+// Converted 2 DFF/DLAT(s) in (G) to ZERO/ONE
+// Converted 2 DFF/DLAT(s) in (R) to ZERO/ONE
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF    BBOX      Total   
+--------------------------------------------------------------------------------
+Golden            102    307    1753   2         2164    
+--------------------------------------------------------------------------------
+Revised           102    307    1753   2         2164    
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       2         2       
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DFF    E         Total   
+--------------------------------------------------------------------------------
+Unreachable       2      3         5       
+Not-mapped        0      565       565     
+================================================================================
+// Automatic setup finished.
+0
+CPU time     : 20.09   seconds
+Elapse time  : 32      seconds
+Memory usage : 450.69  M bytes
+// Command: report_design_data; report_unmapped_points -notmapped; analyze_datapath -module -verbose ; analyze_datapath   -verbose
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules         8            4078
+Library-cells        369             222
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT              102                  102
+OUTPUT             307                  307
+--------------------------------------------
+AND        *      7070                 6873
+BUF        *        80                    0
+DFF               1755                 1755
+INV        *       216                 2003
+MUX        *      4328                 5279
+NAND       *         3                 1565
+NOR        *       107                 3033
+ONEHOT     *         0                  630
+OR         *      1627                 1051
+WIRE       *        64                 2401
+XNOR       *        70                  557
+XOR        *       600                   47
+------ word-level --------------------------
+ADD        *        11                    0
+EQ         *         1                    0
+GE         *         1                    0
+LT         *         2                    0
+SLL        *         1                    0
+SUBTRACT   *         4                    0
+WAND       *         4                    0
+WMUX       *       221                    0
+WOR        *         1                    0
+WSEL       *       127                  222
+WXOR       *         1                    0
+BBOX                 2                    2
+------ don't care --------------------------
+X-assignments     1186                  692
+--------------------------------------------
+Total            17108                25888
+
+// Command: report_unmapped_points -notmapped
+Unmapped point (not-mapped):
+  (R)   2236  E    /mux_pcpi_int_rd_332_3/g1/n16264
+Unmapped point (not-mapped):
+  (R)   2237  E    /mux_pcpi_int_rd_332_3/g33/n16264
+Unmapped point (not-mapped):
+  (R)   2238  E    /mux_pcpi_int_rd_332_3/g34/n16264
+Unmapped point (not-mapped):
+  (R)   2239  E    /mux_pcpi_int_rd_332_3/g35/n16264
+Unmapped point (not-mapped):
+  (R)   2240  E    /mux_pcpi_int_rd_332_3/g36/n16264
+Unmapped point (not-mapped):
+  (R)   2241  E    /mux_pcpi_int_rd_332_3/g37/n16264
+Unmapped point (not-mapped):
+  (R)   2242  E    /mux_pcpi_int_rd_332_3/g38/n16264
+Unmapped point (not-mapped):
+  (R)   2243  E    /mux_pcpi_int_rd_332_3/g39/n16264
+Unmapped point (not-mapped):
+  (R)   2244  E    /mux_pcpi_int_rd_332_3/g40/n16264
+Unmapped point (not-mapped):
+  (R)   2245  E    /mux_pcpi_int_rd_332_3/g41/n16264
+Unmapped point (not-mapped):
+  (R)   2246  E    /mux_pcpi_int_rd_332_3/g42/n16264
+Unmapped point (not-mapped):
+  (R)   2247  E    /mux_pcpi_int_rd_332_3/g43/n16264
+Unmapped point (not-mapped):
+  (R)   2248  E    /mux_pcpi_int_rd_332_3/g44/n16264
+Unmapped point (not-mapped):
+  (R)   2249  E    /mux_pcpi_int_rd_332_3/g45/n16264
+Unmapped point (not-mapped):
+  (R)   2250  E    /mux_pcpi_int_rd_332_3/g46/n16264
+Unmapped point (not-mapped):
+  (R)   2251  E    /mux_pcpi_int_rd_332_3/g47/n16264
+Unmapped point (not-mapped):
+  (R)   2252  E    /mux_pcpi_int_rd_332_3/g48/n16264
+Unmapped point (not-mapped):
+  (R)   2253  E    /mux_pcpi_int_rd_332_3/g49/n16264
+Unmapped point (not-mapped):
+  (R)   2254  E    /mux_pcpi_int_rd_332_3/g50/n16264
+Unmapped point (not-mapped):
+  (R)   2255  E    /mux_pcpi_int_rd_332_3/g51/n16264
+Unmapped point (not-mapped):
+  (R)   2256  E    /mux_pcpi_int_rd_332_3/g52/n16264
+Unmapped point (not-mapped):
+  (R)   2257  E    /mux_pcpi_int_rd_332_3/g53/n16264
+Unmapped point (not-mapped):
+  (R)   2258  E    /mux_pcpi_int_rd_332_3/g54/n16264
+Unmapped point (not-mapped):
+  (R)   2259  E    /mux_pcpi_int_rd_332_3/g55/n16264
+Unmapped point (not-mapped):
+  (R)   2260  E    /mux_pcpi_int_rd_332_3/g56/n16264
+Unmapped point (not-mapped):
+  (R)   2261  E    /mux_pcpi_int_rd_332_3/g57/n16264
+Unmapped point (not-mapped):
+  (R)   2262  E    /mux_pcpi_int_rd_332_3/g58/n16264
+Unmapped point (not-mapped):
+  (R)   2263  E    /mux_pcpi_int_rd_332_3/g59/n16264
+Unmapped point (not-mapped):
+  (R)   2264  E    /mux_pcpi_int_rd_332_3/g60/n16264
+Unmapped point (not-mapped):
+  (R)   2265  E    /mux_pcpi_int_rd_332_3/g61/n16264
+Unmapped point (not-mapped):
+  (R)   2266  E    /mux_pcpi_int_rd_332_3/g62/n16264
+Unmapped point (not-mapped):
+  (R)   2267  E    /mux_pcpi_int_rd_332_3/g63/n16264
+Unmapped point (not-mapped):
+  (R)   2268  E    /mux_reg_out_1623_7/g1/n16314
+Unmapped point (not-mapped):
+  (R)   2269  E    /mux_reg_out_1623_7/g33/n16314
+Unmapped point (not-mapped):
+  (R)   2270  E    /mux_reg_out_1623_7/g34/n16314
+Unmapped point (not-mapped):
+  (R)   2271  E    /mux_reg_out_1623_7/g35/n16314
+Unmapped point (not-mapped):
+  (R)   2272  E    /mux_reg_out_1623_7/g36/n16314
+Unmapped point (not-mapped):
+  (R)   2273  E    /mux_reg_out_1623_7/g37/n16314
+Unmapped point (not-mapped):
+  (R)   2274  E    /mux_reg_out_1623_7/g38/n16314
+Unmapped point (not-mapped):
+  (R)   2275  E    /mux_reg_out_1623_7/g39/n16314
+Unmapped point (not-mapped):
+  (R)   2276  E    /mux_reg_out_1623_7/g40/n16314
+Unmapped point (not-mapped):
+  (R)   2277  E    /mux_reg_out_1623_7/g41/n16314
+Unmapped point (not-mapped):
+  (R)   2278  E    /mux_reg_out_1623_7/g42/n16314
+Unmapped point (not-mapped):
+  (R)   2279  E    /mux_reg_out_1623_7/g43/n16314
+Unmapped point (not-mapped):
+  (R)   2280  E    /mux_reg_out_1623_7/g44/n16314
+Unmapped point (not-mapped):
+  (R)   2281  E    /mux_reg_out_1623_7/g45/n16314
+Unmapped point (not-mapped):
+  (R)   2282  E    /mux_reg_out_1623_7/g46/n16314
+Unmapped point (not-mapped):
+  (R)   2283  E    /mux_reg_out_1623_7/g47/n16314
+Unmapped point (not-mapped):
+  (R)   2284  E    /mux_reg_out_1623_7/g48/n16314
+Unmapped point (not-mapped):
+  (R)   2285  E    /mux_reg_out_1623_7/g49/n16314
+Unmapped point (not-mapped):
+  (R)   2286  E    /mux_reg_out_1623_7/g50/n16314
+Unmapped point (not-mapped):
+  (R)   2287  E    /mux_reg_out_1623_7/g51/n16314
+Unmapped point (not-mapped):
+  (R)   2288  E    /mux_reg_out_1623_7/g52/n16314
+Unmapped point (not-mapped):
+  (R)   2289  E    /mux_reg_out_1623_7/g53/n16314
+Unmapped point (not-mapped):
+  (R)   2290  E    /mux_reg_out_1623_7/g54/n16314
+Unmapped point (not-mapped):
+  (R)   2291  E    /mux_reg_out_1623_7/g55/n16314
+Unmapped point (not-mapped):
+  (R)   2292  E    /mux_reg_out_1623_7/g56/n16314
+Unmapped point (not-mapped):
+  (R)   2293  E    /mux_reg_out_1623_7/g57/n16314
+Unmapped point (not-mapped):
+  (R)   2294  E    /mux_reg_out_1623_7/g58/n16314
+Unmapped point (not-mapped):
+  (R)   2295  E    /mux_reg_out_1623_7/g59/n16314
+Unmapped point (not-mapped):
+  (R)   2296  E    /mux_reg_out_1623_7/g60/n16314
+Unmapped point (not-mapped):
+  (R)   2297  E    /mux_reg_out_1623_7/g61/n16314
+Unmapped point (not-mapped):
+  (R)   2298  E    /mux_reg_out_1623_7/g62/n16314
+Unmapped point (not-mapped):
+  (R)   2299  E    /mux_reg_out_1623_7/g63/n16314
+Unmapped point (not-mapped):
+  (R)   2300  E    /mux_decoded_imm_1117_4/g1/n16213
+Unmapped point (not-mapped):
+  (R)   2301  E    /mux_decoded_imm_1117_4/g33/n16213
+Unmapped point (not-mapped):
+  (R)   2302  E    /mux_decoded_imm_1117_4/g34/n16213
+Unmapped point (not-mapped):
+  (R)   2303  E    /mux_decoded_imm_1117_4/g35/n16213
+Unmapped point (not-mapped):
+  (R)   2304  E    /mux_decoded_imm_1117_4/g36/n16213
+Unmapped point (not-mapped):
+  (R)   2305  E    /mux_decoded_imm_1117_4/g37/n16213
+Unmapped point (not-mapped):
+  (R)   2306  E    /mux_decoded_imm_1117_4/g38/n16213
+Unmapped point (not-mapped):
+  (R)   2307  E    /mux_decoded_imm_1117_4/g39/n16213
+Unmapped point (not-mapped):
+  (R)   2308  E    /mux_decoded_imm_1117_4/g40/n16213
+Unmapped point (not-mapped):
+  (R)   2309  E    /mux_decoded_imm_1117_4/g41/n16213
+Unmapped point (not-mapped):
+  (R)   2310  E    /mux_decoded_imm_1117_4/g42/n16213
+Unmapped point (not-mapped):
+  (R)   2311  E    /mux_decoded_imm_1117_4/g43/n16213
+Unmapped point (not-mapped):
+  (R)   2312  E    /mux_decoded_imm_1117_4/g44/n16213
+Unmapped point (not-mapped):
+  (R)   2313  E    /mux_decoded_imm_1117_4/g45/n16213
+Unmapped point (not-mapped):
+  (R)   2314  E    /mux_decoded_imm_1117_4/g46/n16213
+Unmapped point (not-mapped):
+  (R)   2315  E    /mux_decoded_imm_1117_4/g47/n16213
+Unmapped point (not-mapped):
+  (R)   2316  E    /mux_decoded_imm_1117_4/g48/n16213
+Unmapped point (not-mapped):
+  (R)   2317  E    /mux_decoded_imm_1117_4/g49/n16213
+Unmapped point (not-mapped):
+  (R)   2318  E    /mux_decoded_imm_1117_4/g50/n16213
+Unmapped point (not-mapped):
+  (R)   2319  E    /mux_decoded_imm_1117_4/g51/n16213
+Unmapped point (not-mapped):
+  (R)   2320  E    /mux_decoded_imm_1117_4/g52/n16213
+Unmapped point (not-mapped):
+  (R)   2321  E    /mux_decoded_imm_1117_4/g53/n16213
+Unmapped point (not-mapped):
+  (R)   2322  E    /mux_decoded_imm_1117_4/g54/n16213
+Unmapped point (not-mapped):
+  (R)   2323  E    /mux_decoded_imm_1117_4/g55/n16213
+Unmapped point (not-mapped):
+  (R)   2324  E    /mux_decoded_imm_1117_4/g56/n16213
+Unmapped point (not-mapped):
+  (R)   2325  E    /mux_decoded_imm_1117_4/g57/n16213
+Unmapped point (not-mapped):
+  (R)   2326  E    /mux_decoded_imm_1117_4/g58/n16213
+Unmapped point (not-mapped):
+  (R)   2327  E    /mux_decoded_imm_1117_4/g59/n16213
+Unmapped point (not-mapped):
+  (R)   2328  E    /mux_decoded_imm_1117_4/g60/n16213
+Unmapped point (not-mapped):
+  (R)   2329  E    /mux_decoded_imm_1117_4/g61/n16213
+Unmapped point (not-mapped):
+  (R)   2330  E    /mux_decoded_imm_1117_4/g62/n16213
+Unmapped point (not-mapped):
+  (R)   2331  E    /mux_decoded_imm_1117_4/g63/n16213
+Unmapped point (not-mapped):
+  (R)   2332  E    /mux_mem_wordsize_1855_7/g1/n16264
+Unmapped point (not-mapped):
+  (R)   2333  E    /mux_mem_wordsize_1855_7/g3/n16264
+Unmapped point (not-mapped):
+  (R)   2334  E    /mux_mem_wordsize_1880_7/g1/n16264
+Unmapped point (not-mapped):
+  (R)   2335  E    /mux_mem_wordsize_1880_7/g3/n16264
+Unmapped point (not-mapped):
+  (R)   2336  E    /mux_mem_rdata_word_403_9/g1/n16577
+Unmapped point (not-mapped):
+  (R)   2337  E    /mux_mem_rdata_word_403_9/g2/n16577
+Unmapped point (not-mapped):
+  (R)   2338  E    /mux_mem_rdata_word_403_9/g3/n16577
+Unmapped point (not-mapped):
+  (R)   2339  E    /mux_mem_rdata_word_403_9/g4/n16577
+Unmapped point (not-mapped):
+  (R)   2340  E    /mux_mem_rdata_word_403_9/g5/n16577
+Unmapped point (not-mapped):
+  (R)   2341  E    /mux_mem_rdata_word_403_9/g6/n16577
+Unmapped point (not-mapped):
+  (R)   2342  E    /mux_mem_rdata_word_403_9/g7/n16577
+Unmapped point (not-mapped):
+  (R)   2343  E    /mux_mem_rdata_word_403_9/g8/n16577
+Unmapped point (not-mapped):
+  (R)   2344  E    /mux_mem_rdata_word_403_9/g9/n16577
+Unmapped point (not-mapped):
+  (R)   2345  E    /mux_mem_rdata_word_403_9/g10/n16577
+Unmapped point (not-mapped):
+  (R)   2346  E    /mux_mem_rdata_word_403_9/g11/n16577
+Unmapped point (not-mapped):
+  (R)   2347  E    /mux_mem_rdata_word_403_9/g12/n16577
+Unmapped point (not-mapped):
+  (R)   2348  E    /mux_mem_rdata_word_403_9/g13/n16577
+Unmapped point (not-mapped):
+  (R)   2349  E    /mux_mem_rdata_word_403_9/g14/n16577
+Unmapped point (not-mapped):
+  (R)   2350  E    /mux_mem_rdata_word_403_9/g15/n16577
+Unmapped point (not-mapped):
+  (R)   2351  E    /mux_mem_rdata_word_403_9/g16/n16577
+Unmapped point (not-mapped):
+  (R)   2352  E    /mux_mem_rdata_word_403_9/g17/n16577
+Unmapped point (not-mapped):
+  (R)   2353  E    /mux_mem_rdata_word_403_9/g18/n16577
+Unmapped point (not-mapped):
+  (R)   2354  E    /mux_mem_rdata_word_403_9/g19/n16577
+Unmapped point (not-mapped):
+  (R)   2355  E    /mux_mem_rdata_word_403_9/g20/n16577
+Unmapped point (not-mapped):
+  (R)   2356  E    /mux_mem_rdata_word_403_9/g21/n16577
+Unmapped point (not-mapped):
+  (R)   2357  E    /mux_mem_rdata_word_403_9/g22/n16577
+Unmapped point (not-mapped):
+  (R)   2358  E    /mux_mem_rdata_word_403_9/g23/n16577
+Unmapped point (not-mapped):
+  (R)   2359  E    /mux_mem_rdata_word_403_9/g24/n16577
+Unmapped point (not-mapped):
+  (R)   2360  E    /mux_mem_rdata_word_403_9/g25/n16577
+Unmapped point (not-mapped):
+  (R)   2361  E    /mux_mem_rdata_word_403_9/g26/n16577
+Unmapped point (not-mapped):
+  (R)   2362  E    /mux_mem_rdata_word_403_9/g27/n16577
+Unmapped point (not-mapped):
+  (R)   2363  E    /mux_mem_rdata_word_403_9/g28/n16577
+Unmapped point (not-mapped):
+  (R)   2364  E    /mux_mem_rdata_word_403_9/g29/n16577
+Unmapped point (not-mapped):
+  (R)   2365  E    /mux_mem_rdata_word_403_9/g30/n16577
+Unmapped point (not-mapped):
+  (R)   2366  E    /mux_mem_rdata_word_403_9/g31/n16577
+Unmapped point (not-mapped):
+  (R)   2367  E    /mux_mem_rdata_word_403_9/g32/n16577
+Unmapped point (not-mapped):
+  (R)   2368  E    /mux_reg_out_1897_7/g1/n16264
+Unmapped point (not-mapped):
+  (R)   2369  E    /mux_reg_out_1897_7/g25/n16264
+Unmapped point (not-mapped):
+  (R)   2370  E    /mux_reg_out_1897_7/g26/n16264
+Unmapped point (not-mapped):
+  (R)   2371  E    /mux_reg_out_1897_7/g27/n16264
+Unmapped point (not-mapped):
+  (R)   2372  E    /mux_reg_out_1897_7/g28/n16264
+Unmapped point (not-mapped):
+  (R)   2373  E    /mux_reg_out_1897_7/g29/n16264
+Unmapped point (not-mapped):
+  (R)   2374  E    /mux_reg_out_1897_7/g30/n16264
+Unmapped point (not-mapped):
+  (R)   2375  E    /mux_reg_out_1897_7/g31/n16264
+Unmapped point (not-mapped):
+  (R)   2376  E    /mux_reg_out_1897_7/g32/n16264
+Unmapped point (not-mapped):
+  (R)   2377  E    /mux_reg_out_1897_7/g33/n16264
+Unmapped point (not-mapped):
+  (R)   2378  E    /mux_reg_out_1897_7/g34/n16264
+Unmapped point (not-mapped):
+  (R)   2379  E    /mux_reg_out_1897_7/g35/n16264
+Unmapped point (not-mapped):
+  (R)   2380  E    /mux_reg_out_1897_7/g36/n16264
+Unmapped point (not-mapped):
+  (R)   2381  E    /mux_reg_out_1897_7/g37/n16264
+Unmapped point (not-mapped):
+  (R)   2382  E    /mux_reg_out_1897_7/g38/n16264
+Unmapped point (not-mapped):
+  (R)   2383  E    /mux_reg_out_1897_7/g39/n16264
+Unmapped point (not-mapped):
+  (R)   2384  E    /mux_reg_out_1897_7/g40/n16264
+Unmapped point (not-mapped):
+  (R)   2385  E    /mux_reg_out_1897_7/g41/n16264
+Unmapped point (not-mapped):
+  (R)   2386  E    /mux_reg_out_1897_7/g42/n16264
+Unmapped point (not-mapped):
+  (R)   2387  E    /mux_reg_out_1897_7/g43/n16264
+Unmapped point (not-mapped):
+  (R)   2388  E    /mux_reg_out_1897_7/g44/n16264
+Unmapped point (not-mapped):
+  (R)   2389  E    /mux_reg_out_1897_7/g45/n16264
+Unmapped point (not-mapped):
+  (R)   2390  E    /mux_reg_out_1897_7/g46/n16264
+Unmapped point (not-mapped):
+  (R)   2391  E    /mux_reg_out_1897_7/g47/n16264
+Unmapped point (not-mapped):
+  (R)   2392  E    /mux_reg_op2_1579_5/g1/n16314
+Unmapped point (not-mapped):
+  (R)   2393  E    /mux_reg_op2_1579_5/g33/n16314
+Unmapped point (not-mapped):
+  (R)   2394  E    /mux_reg_op2_1579_5/g34/n16314
+Unmapped point (not-mapped):
+  (R)   2395  E    /mux_reg_op2_1579_5/g35/n16314
+Unmapped point (not-mapped):
+  (R)   2396  E    /mux_reg_op2_1579_5/g36/n16314
+Unmapped point (not-mapped):
+  (R)   2397  E    /mux_reg_op2_1579_5/g37/n16314
+Unmapped point (not-mapped):
+  (R)   2398  E    /mux_reg_op2_1579_5/g38/n16314
+Unmapped point (not-mapped):
+  (R)   2399  E    /mux_reg_op2_1579_5/g39/n16314
+Unmapped point (not-mapped):
+  (R)   2400  E    /mux_reg_op2_1579_5/g40/n16314
+Unmapped point (not-mapped):
+  (R)   2401  E    /mux_reg_op2_1579_5/g41/n16314
+Unmapped point (not-mapped):
+  (R)   2402  E    /mux_reg_op2_1579_5/g42/n16314
+Unmapped point (not-mapped):
+  (R)   2403  E    /mux_reg_op2_1579_5/g43/n16314
+Unmapped point (not-mapped):
+  (R)   2404  E    /mux_reg_op2_1579_5/g44/n16314
+Unmapped point (not-mapped):
+  (R)   2405  E    /mux_reg_op2_1579_5/g45/n16314
+Unmapped point (not-mapped):
+  (R)   2406  E    /mux_reg_op2_1579_5/g46/n16314
+Unmapped point (not-mapped):
+  (R)   2407  E    /mux_reg_op2_1579_5/g47/n16314
+Unmapped point (not-mapped):
+  (R)   2408  E    /mux_reg_op2_1579_5/g48/n16314
+Unmapped point (not-mapped):
+  (R)   2409  E    /mux_reg_op2_1579_5/g49/n16314
+Unmapped point (not-mapped):
+  (R)   2410  E    /mux_reg_op2_1579_5/g50/n16314
+Unmapped point (not-mapped):
+  (R)   2411  E    /mux_reg_op2_1579_5/g51/n16314
+Unmapped point (not-mapped):
+  (R)   2412  E    /mux_reg_op2_1579_5/g52/n16314
+Unmapped point (not-mapped):
+  (R)   2413  E    /mux_reg_op2_1579_5/g53/n16314
+Unmapped point (not-mapped):
+  (R)   2414  E    /mux_reg_op2_1579_5/g54/n16314
+Unmapped point (not-mapped):
+  (R)   2415  E    /mux_reg_op2_1579_5/g55/n16314
+Unmapped point (not-mapped):
+  (R)   2416  E    /mux_reg_op2_1579_5/g56/n16314
+Unmapped point (not-mapped):
+  (R)   2417  E    /mux_reg_op2_1579_5/g57/n16314
+Unmapped point (not-mapped):
+  (R)   2418  E    /mux_reg_op2_1579_5/g58/n16314
+Unmapped point (not-mapped):
+  (R)   2419  E    /mux_reg_op2_1579_5/g59/n16314
+Unmapped point (not-mapped):
+  (R)   2420  E    /mux_reg_op2_1579_5/g60/n16314
+Unmapped point (not-mapped):
+  (R)   2421  E    /mux_reg_op2_1579_5/g61/n16314
+Unmapped point (not-mapped):
+  (R)   2422  E    /mux_reg_op2_1579_5/g62/n16314
+Unmapped point (not-mapped):
+  (R)   2423  E    /mux_reg_op2_1579_5/g63/n16314
+Unmapped point (not-mapped):
+  (R)   2424  E    /mux_alu_out_0_1247_3/g1/n16213
+Unmapped point (not-mapped):
+  (R)   2425  E    /mux_reg_op1_1579_5/g1/n16213
+Unmapped point (not-mapped):
+  (R)   2426  E    /mux_reg_op1_1579_5/g33/n16213
+Unmapped point (not-mapped):
+  (R)   2427  E    /mux_reg_op1_1579_5/g34/n16213
+Unmapped point (not-mapped):
+  (R)   2428  E    /mux_reg_op1_1579_5/g35/n16213
+Unmapped point (not-mapped):
+  (R)   2429  E    /mux_reg_op1_1579_5/g36/n16213
+Unmapped point (not-mapped):
+  (R)   2430  E    /mux_reg_op1_1579_5/g37/n16213
+Unmapped point (not-mapped):
+  (R)   2431  E    /mux_reg_op1_1579_5/g38/n16213
+Unmapped point (not-mapped):
+  (R)   2432  E    /mux_reg_op1_1579_5/g39/n16213
+Unmapped point (not-mapped):
+  (R)   2433  E    /mux_reg_op1_1579_5/g40/n16213
+Unmapped point (not-mapped):
+  (R)   2434  E    /mux_reg_op1_1579_5/g41/n16213
+Unmapped point (not-mapped):
+  (R)   2435  E    /mux_reg_op1_1579_5/g42/n16213
+Unmapped point (not-mapped):
+  (R)   2436  E    /mux_reg_op1_1579_5/g43/n16213
+Unmapped point (not-mapped):
+  (R)   2437  E    /mux_reg_op1_1579_5/g44/n16213
+Unmapped point (not-mapped):
+  (R)   2438  E    /mux_reg_op1_1579_5/g45/n16213
+Unmapped point (not-mapped):
+  (R)   2439  E    /mux_reg_op1_1579_5/g46/n16213
+Unmapped point (not-mapped):
+  (R)   2440  E    /mux_reg_op1_1579_5/g47/n16213
+Unmapped point (not-mapped):
+  (R)   2441  E    /mux_reg_op1_1579_5/g48/n16213
+Unmapped point (not-mapped):
+  (R)   2442  E    /mux_reg_op1_1579_5/g49/n16213
+Unmapped point (not-mapped):
+  (R)   2443  E    /mux_reg_op1_1579_5/g50/n16213
+Unmapped point (not-mapped):
+  (R)   2444  E    /mux_reg_op1_1579_5/g51/n16213
+Unmapped point (not-mapped):
+  (R)   2445  E    /mux_reg_op1_1579_5/g52/n16213
+Unmapped point (not-mapped):
+  (R)   2446  E    /mux_reg_op1_1579_5/g53/n16213
+Unmapped point (not-mapped):
+  (R)   2447  E    /mux_reg_op1_1579_5/g54/n16213
+Unmapped point (not-mapped):
+  (R)   2448  E    /mux_reg_op1_1579_5/g55/n16213
+Unmapped point (not-mapped):
+  (R)   2449  E    /mux_reg_op1_1579_5/g56/n16213
+Unmapped point (not-mapped):
+  (R)   2450  E    /mux_reg_op1_1579_5/g57/n16213
+Unmapped point (not-mapped):
+  (R)   2451  E    /mux_reg_op1_1579_5/g58/n16213
+Unmapped point (not-mapped):
+  (R)   2452  E    /mux_reg_op1_1579_5/g59/n16213
+Unmapped point (not-mapped):
+  (R)   2453  E    /mux_reg_op1_1579_5/g60/n16213
+Unmapped point (not-mapped):
+  (R)   2454  E    /mux_reg_op1_1579_5/g61/n16213
+Unmapped point (not-mapped):
+  (R)   2455  E    /mux_reg_op1_1579_5/g62/n16213
+Unmapped point (not-mapped):
+  (R)   2456  E    /mux_reg_op1_1579_5/g63/n16213
+Unmapped point (not-mapped):
+  (R)   2457  E    /mux_reg_op1_1832_6/g1/n16264
+Unmapped point (not-mapped):
+  (R)   2458  E    /mux_reg_op1_1832_6/g33/n16264
+Unmapped point (not-mapped):
+  (R)   2459  E    /mux_reg_op1_1832_6/g34/n16264
+Unmapped point (not-mapped):
+  (R)   2460  E    /mux_reg_op1_1832_6/g35/n16264
+Unmapped point (not-mapped):
+  (R)   2461  E    /mux_reg_op1_1832_6/g36/n16264
+Unmapped point (not-mapped):
+  (R)   2462  E    /mux_reg_op1_1832_6/g37/n16264
+Unmapped point (not-mapped):
+  (R)   2463  E    /mux_reg_op1_1832_6/g38/n16264
+Unmapped point (not-mapped):
+  (R)   2464  E    /mux_reg_op1_1832_6/g39/n16264
+Unmapped point (not-mapped):
+  (R)   2465  E    /mux_reg_op1_1832_6/g40/n16264
+Unmapped point (not-mapped):
+  (R)   2466  E    /mux_reg_op1_1832_6/g41/n16264
+Unmapped point (not-mapped):
+  (R)   2467  E    /mux_reg_op1_1832_6/g42/n16264
+Unmapped point (not-mapped):
+  (R)   2468  E    /mux_reg_op1_1832_6/g43/n16264
+Unmapped point (not-mapped):
+  (R)   2469  E    /mux_reg_op1_1832_6/g44/n16264
+Unmapped point (not-mapped):
+  (R)   2470  E    /mux_reg_op1_1832_6/g45/n16264
+Unmapped point (not-mapped):
+  (R)   2471  E    /mux_reg_op1_1832_6/g46/n16264
+Unmapped point (not-mapped):
+  (R)   2472  E    /mux_reg_op1_1832_6/g47/n16264
+Unmapped point (not-mapped):
+  (R)   2473  E    /mux_reg_op1_1832_6/g48/n16264
+Unmapped point (not-mapped):
+  (R)   2474  E    /mux_reg_op1_1832_6/g49/n16264
+Unmapped point (not-mapped):
+  (R)   2475  E    /mux_reg_op1_1832_6/g50/n16264
+Unmapped point (not-mapped):
+  (R)   2476  E    /mux_reg_op1_1832_6/g51/n16264
+Unmapped point (not-mapped):
+  (R)   2477  E    /mux_reg_op1_1832_6/g52/n16264
+Unmapped point (not-mapped):
+  (R)   2478  E    /mux_reg_op1_1832_6/g53/n16264
+Unmapped point (not-mapped):
+  (R)   2479  E    /mux_reg_op1_1832_6/g54/n16264
+Unmapped point (not-mapped):
+  (R)   2480  E    /mux_reg_op1_1832_6/g55/n16264
+Unmapped point (not-mapped):
+  (R)   2481  E    /mux_reg_op1_1832_6/g56/n16264
+Unmapped point (not-mapped):
+  (R)   2482  E    /mux_reg_op1_1832_6/g57/n16264
+Unmapped point (not-mapped):
+  (R)   2483  E    /mux_reg_op1_1832_6/g58/n16264
+Unmapped point (not-mapped):
+  (R)   2484  E    /mux_reg_op1_1832_6/g59/n16264
+Unmapped point (not-mapped):
+  (R)   2485  E    /mux_reg_op1_1832_6/g60/n16264
+Unmapped point (not-mapped):
+  (R)   2486  E    /mux_reg_op1_1832_6/g61/n16264
+Unmapped point (not-mapped):
+  (R)   2487  E    /mux_reg_op1_1832_6/g62/n16264
+Unmapped point (not-mapped):
+  (R)   2488  E    /mux_reg_op1_1832_6/g63/n16264
+Unmapped point (not-mapped):
+  (R)   2489  E    /mux_reg_op1_1840_6/g1/n16264
+Unmapped point (not-mapped):
+  (R)   2490  E    /mux_reg_op1_1840_6/g33/n16264
+Unmapped point (not-mapped):
+  (R)   2491  E    /mux_reg_op1_1840_6/g34/n16264
+Unmapped point (not-mapped):
+  (R)   2492  E    /mux_reg_op1_1840_6/g35/n16264
+Unmapped point (not-mapped):
+  (R)   2493  E    /mux_reg_op1_1840_6/g36/n16264
+Unmapped point (not-mapped):
+  (R)   2494  E    /mux_reg_op1_1840_6/g37/n16264
+Unmapped point (not-mapped):
+  (R)   2495  E    /mux_reg_op1_1840_6/g38/n16264
+Unmapped point (not-mapped):
+  (R)   2496  E    /mux_reg_op1_1840_6/g39/n16264
+Unmapped point (not-mapped):
+  (R)   2497  E    /mux_reg_op1_1840_6/g40/n16264
+Unmapped point (not-mapped):
+  (R)   2498  E    /mux_reg_op1_1840_6/g41/n16264
+Unmapped point (not-mapped):
+  (R)   2499  E    /mux_reg_op1_1840_6/g42/n16264
+Unmapped point (not-mapped):
+  (R)   2500  E    /mux_reg_op1_1840_6/g43/n16264
+Unmapped point (not-mapped):
+  (R)   2501  E    /mux_reg_op1_1840_6/g44/n16264
+Unmapped point (not-mapped):
+  (R)   2502  E    /mux_reg_op1_1840_6/g45/n16264
+Unmapped point (not-mapped):
+  (R)   2503  E    /mux_reg_op1_1840_6/g46/n16264
+Unmapped point (not-mapped):
+  (R)   2504  E    /mux_reg_op1_1840_6/g47/n16264
+Unmapped point (not-mapped):
+  (R)   2505  E    /mux_reg_op1_1840_6/g48/n16264
+Unmapped point (not-mapped):
+  (R)   2506  E    /mux_reg_op1_1840_6/g49/n16264
+Unmapped point (not-mapped):
+  (R)   2507  E    /mux_reg_op1_1840_6/g50/n16264
+Unmapped point (not-mapped):
+  (R)   2508  E    /mux_reg_op1_1840_6/g51/n16264
+Unmapped point (not-mapped):
+  (R)   2509  E    /mux_reg_op1_1840_6/g52/n16264
+Unmapped point (not-mapped):
+  (R)   2510  E    /mux_reg_op1_1840_6/g53/n16264
+Unmapped point (not-mapped):
+  (R)   2511  E    /mux_reg_op1_1840_6/g54/n16264
+Unmapped point (not-mapped):
+  (R)   2512  E    /mux_reg_op1_1840_6/g55/n16264
+Unmapped point (not-mapped):
+  (R)   2513  E    /mux_reg_op1_1840_6/g56/n16264
+Unmapped point (not-mapped):
+  (R)   2514  E    /mux_reg_op1_1840_6/g57/n16264
+Unmapped point (not-mapped):
+  (R)   2515  E    /mux_reg_op1_1840_6/g58/n16264
+Unmapped point (not-mapped):
+  (R)   2516  E    /mux_reg_op1_1840_6/g59/n16264
+Unmapped point (not-mapped):
+  (R)   2517  E    /mux_reg_op1_1840_6/g60/n16264
+Unmapped point (not-mapped):
+  (R)   2518  E    /mux_reg_op1_1840_6/g61/n16264
+Unmapped point (not-mapped):
+  (R)   2519  E    /mux_reg_op1_1840_6/g62/n16264
+Unmapped point (not-mapped):
+  (R)   2520  E    /mux_reg_op1_1840_6/g63/n16264
+Unmapped point (not-mapped):
+  (R)   2521  E    /mux_pcpi_int_wr_332_3/g1/n16314
+Unmapped point (not-mapped):
+  (R)   2522  E    /mux_mem_valid_581_10/g1/n16577
+Unmapped point (not-mapped):
+  (R)   2523  E    /mux_mem_do_rinst_1731_8/g1/n16361
+Unmapped point (not-mapped):
+  (R)   2524  E    /mux_mem_do_rinst_1579_5/g1/n16157
+Unmapped point (not-mapped):
+  (R)   2525  E    /mux_cpu_state_1731_8/g1/n16264
+Unmapped point (not-mapped):
+  (R)   2526  E    /mux_cpu_state_1731_8/g4/n16264
+Unmapped point (not-mapped):
+  (R)   2527  E    /mux_cpu_state_1731_8/g5/n16264
+Unmapped point (not-mapped):
+  (R)   2528  E    /mux_decoder_trigger_1481_9/g1/n16314
+Unmapped point (not-mapped):
+  (R)   2529  E    /mux_alu_out_1264_3/g1/n16157
+Unmapped point (not-mapped):
+  (R)   2530  E    /mux_alu_out_1264_3/g33/n16157
+Unmapped point (not-mapped):
+  (R)   2531  E    /mux_alu_out_1264_3/g34/n16157
+Unmapped point (not-mapped):
+  (R)   2532  E    /mux_alu_out_1264_3/g35/n16157
+Unmapped point (not-mapped):
+  (R)   2533  E    /mux_alu_out_1264_3/g36/n16157
+Unmapped point (not-mapped):
+  (R)   2534  E    /mux_alu_out_1264_3/g37/n16157
+Unmapped point (not-mapped):
+  (R)   2535  E    /mux_alu_out_1264_3/g38/n16157
+Unmapped point (not-mapped):
+  (R)   2536  E    /mux_alu_out_1264_3/g39/n16157
+Unmapped point (not-mapped):
+  (R)   2537  E    /mux_alu_out_1264_3/g40/n16157
+Unmapped point (not-mapped):
+  (R)   2538  E    /mux_alu_out_1264_3/g41/n16157
+Unmapped point (not-mapped):
+  (R)   2539  E    /mux_alu_out_1264_3/g42/n16157
+Unmapped point (not-mapped):
+  (R)   2540  E    /mux_alu_out_1264_3/g43/n16157
+Unmapped point (not-mapped):
+  (R)   2541  E    /mux_alu_out_1264_3/g44/n16157
+Unmapped point (not-mapped):
+  (R)   2542  E    /mux_alu_out_1264_3/g45/n16157
+Unmapped point (not-mapped):
+  (R)   2543  E    /mux_alu_out_1264_3/g46/n16157
+Unmapped point (not-mapped):
+  (R)   2544  E    /mux_alu_out_1264_3/g47/n16157
+Unmapped point (not-mapped):
+  (R)   2545  E    /mux_alu_out_1264_3/g48/n16157
+Unmapped point (not-mapped):
+  (R)   2546  E    /mux_alu_out_1264_3/g49/n16157
+Unmapped point (not-mapped):
+  (R)   2547  E    /mux_alu_out_1264_3/g50/n16157
+Unmapped point (not-mapped):
+  (R)   2548  E    /mux_alu_out_1264_3/g51/n16157
+Unmapped point (not-mapped):
+  (R)   2549  E    /mux_alu_out_1264_3/g52/n16157
+Unmapped point (not-mapped):
+  (R)   2550  E    /mux_alu_out_1264_3/g53/n16157
+Unmapped point (not-mapped):
+  (R)   2551  E    /mux_alu_out_1264_3/g54/n16157
+Unmapped point (not-mapped):
+  (R)   2552  E    /mux_alu_out_1264_3/g55/n16157
+Unmapped point (not-mapped):
+  (R)   2553  E    /mux_alu_out_1264_3/g56/n16157
+Unmapped point (not-mapped):
+  (R)   2554  E    /mux_alu_out_1264_3/g57/n16157
+Unmapped point (not-mapped):
+  (R)   2555  E    /mux_alu_out_1264_3/g58/n16157
+Unmapped point (not-mapped):
+  (R)   2556  E    /mux_alu_out_1264_3/g59/n16157
+Unmapped point (not-mapped):
+  (R)   2557  E    /mux_alu_out_1264_3/g60/n16157
+Unmapped point (not-mapped):
+  (R)   2558  E    /mux_alu_out_1264_3/g61/n16157
+Unmapped point (not-mapped):
+  (R)   2559  E    /mux_alu_out_1264_3/g62/n16157
+Unmapped point (not-mapped):
+  (R)   2560  E    /mux_alu_out_1264_3/g63/n16157
+Unmapped point (not-mapped):
+  (R)   2561  E    /mux_mem_la_wstrb_403_9/g1/n16577
+Unmapped point (not-mapped):
+  (R)   2562  E    /mux_mem_la_wstrb_403_9/g2/n16577
+Unmapped point (not-mapped):
+  (R)   2563  E    /mux_mem_la_wstrb_403_9/g3/n16577
+Unmapped point (not-mapped):
+  (R)   2564  E    /mux_mem_la_wstrb_403_9/g4/n16577
+Unmapped point (not-mapped):
+  (R)   2565  E    /mux_mem_la_wdata_403_9/g1/n16577
+Unmapped point (not-mapped):
+  (R)   2566  E    /mux_mem_la_wdata_403_9/g2/n16577
+Unmapped point (not-mapped):
+  (R)   2567  E    /mux_mem_la_wdata_403_9/g3/n16577
+Unmapped point (not-mapped):
+  (R)   2568  E    /mux_mem_la_wdata_403_9/g4/n16577
+Unmapped point (not-mapped):
+  (R)   2569  E    /mux_mem_la_wdata_403_9/g5/n16577
+Unmapped point (not-mapped):
+  (R)   2570  E    /mux_mem_la_wdata_403_9/g6/n16577
+Unmapped point (not-mapped):
+  (R)   2571  E    /mux_mem_la_wdata_403_9/g7/n16577
+Unmapped point (not-mapped):
+  (R)   2572  E    /mux_mem_la_wdata_403_9/g8/n16577
+Unmapped point (not-mapped):
+  (R)   2573  E    /mux_mem_la_wdata_403_9/g9/n16577
+Unmapped point (not-mapped):
+  (R)   2574  E    /mux_mem_la_wdata_403_9/g10/n16577
+Unmapped point (not-mapped):
+  (R)   2575  E    /mux_mem_la_wdata_403_9/g11/n16577
+Unmapped point (not-mapped):
+  (R)   2576  E    /mux_mem_la_wdata_403_9/g12/n16577
+Unmapped point (not-mapped):
+  (R)   2577  E    /mux_mem_la_wdata_403_9/g13/n16577
+Unmapped point (not-mapped):
+  (R)   2578  E    /mux_mem_la_wdata_403_9/g14/n16577
+Unmapped point (not-mapped):
+  (R)   2579  E    /mux_mem_la_wdata_403_9/g15/n16577
+Unmapped point (not-mapped):
+  (R)   2580  E    /mux_mem_la_wdata_403_9/g16/n16577
+Unmapped point (not-mapped):
+  (R)   2581  E    /mux_mem_la_wdata_403_9/g17/n16577
+Unmapped point (not-mapped):
+  (R)   2582  E    /mux_mem_la_wdata_403_9/g18/n16577
+Unmapped point (not-mapped):
+  (R)   2583  E    /mux_mem_la_wdata_403_9/g19/n16577
+Unmapped point (not-mapped):
+  (R)   2584  E    /mux_mem_la_wdata_403_9/g20/n16577
+Unmapped point (not-mapped):
+  (R)   2585  E    /mux_mem_la_wdata_403_9/g21/n16577
+Unmapped point (not-mapped):
+  (R)   2586  E    /mux_mem_la_wdata_403_9/g22/n16577
+Unmapped point (not-mapped):
+  (R)   2587  E    /mux_mem_la_wdata_403_9/g23/n16577
+Unmapped point (not-mapped):
+  (R)   2588  E    /mux_mem_la_wdata_403_9/g24/n16577
+Unmapped point (not-mapped):
+  (R)   2589  E    /mux_set_mem_do_rinst_1481_9/g1/n16418
+Unmapped point (not-mapped):
+  (R)   2590  E    /mux_trap_1481_9/g1/n16418
+Unmapped point (not-mapped):
+  (R)   2591  E    /mux_set_mem_do_wdata_1481_9/g1/n16418
+Unmapped point (not-mapped):
+  (R)   2595  E    /mux_latched_rd_1481_9/g1/n16361
+Unmapped point (not-mapped):
+  (R)   2596  E    /mux_latched_rd_1481_9/g6/n16361
+Unmapped point (not-mapped):
+  (R)   2597  E    /mux_latched_rd_1481_9/g7/n16361
+Unmapped point (not-mapped):
+  (R)   2598  E    /mux_latched_rd_1481_9/g8/n16361
+Unmapped point (not-mapped):
+  (R)   2599  E    /mux_latched_rd_1481_9/g9/n16361
+Unmapped point (not-mapped):
+  (R)   2600  E    /mux_latched_stalu_1481_9/g1/n16361
+Unmapped point (not-mapped):
+  (R)   2601  E    /mux_reg_sh_1579_5/g1/n16264
+Unmapped point (not-mapped):
+  (R)   2602  E    /mux_reg_sh_1579_5/g6/n16264
+Unmapped point (not-mapped):
+  (R)   2603  E    /mux_reg_sh_1579_5/g7/n16264
+Unmapped point (not-mapped):
+  (R)   2604  E    /mux_reg_sh_1579_5/g8/n16264
+Unmapped point (not-mapped):
+  (R)   2605  E    /mux_reg_sh_1579_5/g9/n16264
+Unmapped point (not-mapped):
+  (R)   2606  E    /mux_reg_sh_1481_9/g1/n16264
+Unmapped point (not-mapped):
+  (R)   2607  E    /mux_reg_sh_1481_9/g6/n16264
+Unmapped point (not-mapped):
+  (R)   2608  E    /mux_reg_sh_1481_9/g7/n16264
+Unmapped point (not-mapped):
+  (R)   2609  E    /mux_reg_sh_1481_9/g8/n16264
+Unmapped point (not-mapped):
+  (R)   2610  E    /mux_reg_sh_1481_9/g9/n16264
+Unmapped point (not-mapped):
+  (R)   2611  E    /mux_set_mem_do_rdata_1481_9/g1/n16418
+Unmapped point (not-mapped):
+  (R)   2612  E    /mux_decoder_pseudo_trigger_1481_9/g1/n16418
+Unmapped point (not-mapped):
+  (R)   2613  E    /mux_decoder_pseudo_trigger_1481_9/g3/n16418
+Unmapped point (not-mapped):
+  (R)   2614  E    /mux_latched_is_lu_1481_9/g1/n16361
+Unmapped point (not-mapped):
+  (R)   2615  E    /mux_latched_is_lh_1481_9/g1/n16361
+Unmapped point (not-mapped):
+  (R)   2616  E    /mux_latched_is_lb_1481_9/g1/n16361
+Unmapped point (not-mapped):
+  (R)   2617  E    /mux_mem_wordsize_1481_9/g1/n16264
+Unmapped point (not-mapped):
+  (R)   2618  E    /mux_mem_wordsize_1481_9/g3/n16264
+Unmapped point (not-mapped):
+  (R)   2619  E    /mux_reg_out_1481_9/g1/n16157
+Unmapped point (not-mapped):
+  (R)   2620  E    /mux_reg_out_1481_9/g33/n16157
+Unmapped point (not-mapped):
+  (R)   2621  E    /mux_reg_out_1481_9/g34/n16157
+Unmapped point (not-mapped):
+  (R)   2622  E    /mux_reg_out_1481_9/g35/n16157
+Unmapped point (not-mapped):
+  (R)   2623  E    /mux_reg_out_1481_9/g36/n16157
+Unmapped point (not-mapped):
+  (R)   2624  E    /mux_reg_out_1481_9/g37/n16157
+Unmapped point (not-mapped):
+  (R)   2625  E    /mux_reg_out_1481_9/g38/n16157
+Unmapped point (not-mapped):
+  (R)   2626  E    /mux_reg_out_1481_9/g39/n16157
+Unmapped point (not-mapped):
+  (R)   2627  E    /mux_reg_out_1481_9/g40/n16157
+Unmapped point (not-mapped):
+  (R)   2628  E    /mux_reg_out_1481_9/g41/n16157
+Unmapped point (not-mapped):
+  (R)   2629  E    /mux_reg_out_1481_9/g42/n16157
+Unmapped point (not-mapped):
+  (R)   2630  E    /mux_reg_out_1481_9/g43/n16157
+Unmapped point (not-mapped):
+  (R)   2631  E    /mux_reg_out_1481_9/g44/n16157
+Unmapped point (not-mapped):
+  (R)   2632  E    /mux_reg_out_1481_9/g45/n16157
+Unmapped point (not-mapped):
+  (R)   2633  E    /mux_reg_out_1481_9/g46/n16157
+Unmapped point (not-mapped):
+  (R)   2634  E    /mux_reg_out_1481_9/g47/n16157
+Unmapped point (not-mapped):
+  (R)   2635  E    /mux_reg_out_1481_9/g48/n16157
+Unmapped point (not-mapped):
+  (R)   2636  E    /mux_reg_out_1481_9/g49/n16157
+Unmapped point (not-mapped):
+  (R)   2637  E    /mux_reg_out_1481_9/g50/n16157
+Unmapped point (not-mapped):
+  (R)   2638  E    /mux_reg_out_1481_9/g51/n16157
+Unmapped point (not-mapped):
+  (R)   2639  E    /mux_reg_out_1481_9/g52/n16157
+Unmapped point (not-mapped):
+  (R)   2640  E    /mux_reg_out_1481_9/g53/n16157
+Unmapped point (not-mapped):
+  (R)   2641  E    /mux_reg_out_1481_9/g54/n16157
+Unmapped point (not-mapped):
+  (R)   2642  E    /mux_reg_out_1481_9/g55/n16157
+Unmapped point (not-mapped):
+  (R)   2643  E    /mux_reg_out_1481_9/g56/n16157
+Unmapped point (not-mapped):
+  (R)   2644  E    /mux_reg_out_1481_9/g57/n16157
+Unmapped point (not-mapped):
+  (R)   2645  E    /mux_reg_out_1481_9/g58/n16157
+Unmapped point (not-mapped):
+  (R)   2646  E    /mux_reg_out_1481_9/g59/n16157
+Unmapped point (not-mapped):
+  (R)   2647  E    /mux_reg_out_1481_9/g60/n16157
+Unmapped point (not-mapped):
+  (R)   2648  E    /mux_reg_out_1481_9/g61/n16157
+Unmapped point (not-mapped):
+  (R)   2649  E    /mux_reg_out_1481_9/g62/n16157
+Unmapped point (not-mapped):
+  (R)   2650  E    /mux_reg_out_1481_9/g63/n16157
+Unmapped point (not-mapped):
+  (R)   2651  E    /mux_reg_op2_1481_9/g1/n16361
+Unmapped point (not-mapped):
+  (R)   2652  E    /mux_reg_op2_1481_9/g33/n16361
+Unmapped point (not-mapped):
+  (R)   2653  E    /mux_reg_op2_1481_9/g34/n16361
+Unmapped point (not-mapped):
+  (R)   2654  E    /mux_reg_op2_1481_9/g35/n16361
+Unmapped point (not-mapped):
+  (R)   2655  E    /mux_reg_op2_1481_9/g36/n16361
+Unmapped point (not-mapped):
+  (R)   2656  E    /mux_reg_op2_1481_9/g37/n16361
+Unmapped point (not-mapped):
+  (R)   2657  E    /mux_reg_op2_1481_9/g38/n16361
+Unmapped point (not-mapped):
+  (R)   2658  E    /mux_reg_op2_1481_9/g39/n16361
+Unmapped point (not-mapped):
+  (R)   2659  E    /mux_reg_op2_1481_9/g40/n16361
+Unmapped point (not-mapped):
+  (R)   2660  E    /mux_reg_op2_1481_9/g41/n16361
+Unmapped point (not-mapped):
+  (R)   2661  E    /mux_reg_op2_1481_9/g42/n16361
+Unmapped point (not-mapped):
+  (R)   2662  E    /mux_reg_op2_1481_9/g43/n16361
+Unmapped point (not-mapped):
+  (R)   2663  E    /mux_reg_op2_1481_9/g44/n16361
+Unmapped point (not-mapped):
+  (R)   2664  E    /mux_reg_op2_1481_9/g45/n16361
+Unmapped point (not-mapped):
+  (R)   2665  E    /mux_reg_op2_1481_9/g46/n16361
+Unmapped point (not-mapped):
+  (R)   2666  E    /mux_reg_op2_1481_9/g47/n16361
+Unmapped point (not-mapped):
+  (R)   2667  E    /mux_reg_op2_1481_9/g48/n16361
+Unmapped point (not-mapped):
+  (R)   2668  E    /mux_reg_op2_1481_9/g49/n16361
+Unmapped point (not-mapped):
+  (R)   2669  E    /mux_reg_op2_1481_9/g50/n16361
+Unmapped point (not-mapped):
+  (R)   2670  E    /mux_reg_op2_1481_9/g51/n16361
+Unmapped point (not-mapped):
+  (R)   2671  E    /mux_reg_op2_1481_9/g52/n16361
+Unmapped point (not-mapped):
+  (R)   2672  E    /mux_reg_op2_1481_9/g53/n16361
+Unmapped point (not-mapped):
+  (R)   2673  E    /mux_reg_op2_1481_9/g54/n16361
+Unmapped point (not-mapped):
+  (R)   2674  E    /mux_reg_op2_1481_9/g55/n16361
+Unmapped point (not-mapped):
+  (R)   2675  E    /mux_reg_op2_1481_9/g56/n16361
+Unmapped point (not-mapped):
+  (R)   2676  E    /mux_reg_op2_1481_9/g57/n16361
+Unmapped point (not-mapped):
+  (R)   2677  E    /mux_reg_op2_1481_9/g58/n16361
+Unmapped point (not-mapped):
+  (R)   2678  E    /mux_reg_op2_1481_9/g59/n16361
+Unmapped point (not-mapped):
+  (R)   2679  E    /mux_reg_op2_1481_9/g60/n16361
+Unmapped point (not-mapped):
+  (R)   2680  E    /mux_reg_op2_1481_9/g61/n16361
+Unmapped point (not-mapped):
+  (R)   2681  E    /mux_reg_op2_1481_9/g62/n16361
+Unmapped point (not-mapped):
+  (R)   2682  E    /mux_reg_op2_1481_9/g63/n16361
+Unmapped point (not-mapped):
+  (R)   2683  E    /mux_latched_branch_1481_9/g1/n16361
+Unmapped point (not-mapped):
+  (R)   2684  E    /mux_reg_op1_1481_9/g1/n16314
+Unmapped point (not-mapped):
+  (R)   2685  E    /mux_reg_op1_1481_9/g33/n16314
+Unmapped point (not-mapped):
+  (R)   2686  E    /mux_reg_op1_1481_9/g34/n16314
+Unmapped point (not-mapped):
+  (R)   2687  E    /mux_reg_op1_1481_9/g35/n16314
+Unmapped point (not-mapped):
+  (R)   2688  E    /mux_reg_op1_1481_9/g36/n16314
+Unmapped point (not-mapped):
+  (R)   2689  E    /mux_reg_op1_1481_9/g37/n16314
+Unmapped point (not-mapped):
+  (R)   2690  E    /mux_reg_op1_1481_9/g38/n16314
+Unmapped point (not-mapped):
+  (R)   2691  E    /mux_reg_op1_1481_9/g39/n16314
+Unmapped point (not-mapped):
+  (R)   2692  E    /mux_reg_op1_1481_9/g40/n16314
+Unmapped point (not-mapped):
+  (R)   2693  E    /mux_reg_op1_1481_9/g41/n16314
+Unmapped point (not-mapped):
+  (R)   2694  E    /mux_reg_op1_1481_9/g42/n16314
+Unmapped point (not-mapped):
+  (R)   2695  E    /mux_reg_op1_1481_9/g43/n16314
+Unmapped point (not-mapped):
+  (R)   2696  E    /mux_reg_op1_1481_9/g44/n16314
+Unmapped point (not-mapped):
+  (R)   2697  E    /mux_reg_op1_1481_9/g45/n16314
+Unmapped point (not-mapped):
+  (R)   2698  E    /mux_reg_op1_1481_9/g46/n16314
+Unmapped point (not-mapped):
+  (R)   2699  E    /mux_reg_op1_1481_9/g47/n16314
+Unmapped point (not-mapped):
+  (R)   2700  E    /mux_reg_op1_1481_9/g48/n16314
+Unmapped point (not-mapped):
+  (R)   2701  E    /mux_reg_op1_1481_9/g49/n16314
+Unmapped point (not-mapped):
+  (R)   2702  E    /mux_reg_op1_1481_9/g50/n16314
+Unmapped point (not-mapped):
+  (R)   2703  E    /mux_reg_op1_1481_9/g51/n16314
+Unmapped point (not-mapped):
+  (R)   2704  E    /mux_reg_op1_1481_9/g52/n16314
+Unmapped point (not-mapped):
+  (R)   2705  E    /mux_reg_op1_1481_9/g53/n16314
+Unmapped point (not-mapped):
+  (R)   2706  E    /mux_reg_op1_1481_9/g54/n16314
+Unmapped point (not-mapped):
+  (R)   2707  E    /mux_reg_op1_1481_9/g55/n16314
+Unmapped point (not-mapped):
+  (R)   2708  E    /mux_reg_op1_1481_9/g56/n16314
+Unmapped point (not-mapped):
+  (R)   2709  E    /mux_reg_op1_1481_9/g57/n16314
+Unmapped point (not-mapped):
+  (R)   2710  E    /mux_reg_op1_1481_9/g58/n16314
+Unmapped point (not-mapped):
+  (R)   2711  E    /mux_reg_op1_1481_9/g59/n16314
+Unmapped point (not-mapped):
+  (R)   2712  E    /mux_reg_op1_1481_9/g60/n16314
+Unmapped point (not-mapped):
+  (R)   2713  E    /mux_reg_op1_1481_9/g61/n16314
+Unmapped point (not-mapped):
+  (R)   2714  E    /mux_reg_op1_1481_9/g62/n16314
+Unmapped point (not-mapped):
+  (R)   2715  E    /mux_reg_op1_1481_9/g63/n16314
+Unmapped point (not-mapped):
+  (R)   2716  E    /mux_pcpi_valid_1481_9/g1/n16361
+Unmapped point (not-mapped):
+  (R)   2717  E    /mux_latched_store_1481_9/g1/n16213
+Unmapped point (not-mapped):
+  (R)   2718  E    /mux_mem_do_rinst_1762_5/g1/n16264
+Unmapped point (not-mapped):
+  (R)   2719  E    /mux_mem_do_rinst_1481_9/g1/n16314
+Unmapped point (not-mapped):
+  (R)   2720  E    /mux_cpu_state_1762_5/g1/n16314
+Unmapped point (not-mapped):
+  (R)   2721  E    /mux_cpu_state_1762_5/g6/n16314
+Unmapped point (not-mapped):
+  (R)   2722  E    /mux_cpu_state_1762_5/g7/n16314
+Unmapped point (not-mapped):
+  (R)   2723  E    /mux_cpu_state_1762_5/g8/n16314
+Unmapped point (not-mapped):
+  (R)   2724  E    /mux_cpu_state_1762_5/g9/n16314
+Unmapped point (not-mapped):
+  (R)   2725  E    /mux_cpu_state_1481_9/g1/n16479
+Unmapped point (not-mapped):
+  (R)   2726  E    /mux_cpu_state_1481_9/g8/n16479
+Unmapped point (not-mapped):
+  (R)   2727  E    /mux_cpu_state_1481_9/g9/n16479
+Unmapped point (not-mapped):
+  (R)   2728  E    /mux_cpu_state_1481_9/g10/n16479
+Unmapped point (not-mapped):
+  (R)   2729  E    /mux_cpu_state_1481_9/g11/n16479
+Unmapped point (not-mapped):
+  (R)   2730  E    /mux_cpu_state_1481_9/g12/n16479
+Unmapped point (not-mapped):
+  (R)   2731  E    /mux_cpu_state_1481_9/g13/n16479
+Unmapped point (not-mapped):
+  (R)   2732  E    /mux_latched_store_1579_3609/g1/n16361
+Unmapped point (not-mapped):
+  (R)   2733  E    /mux_cpu_state_1579_3610/g1/n16479
+Unmapped point (not-mapped):
+  (R)   2734  E    /mux_cpu_state_1579_3610/g7/n16479
+Unmapped point (not-mapped):
+  (R)   2735  E    /mux_cpu_state_1579_3610/g8/n16479
+Unmapped point (not-mapped):
+  (R)   2736  E    /mux_cpu_state_1579_3610/g9/n16479
+Unmapped point (not-mapped):
+  (R)   2737  E    /mux_cpu_state_1579_3610/g10/n16479
+Unmapped point (not-mapped):
+  (R)   2738  E    /mux_cpu_state_1579_3610/g11/n16479
+Unmapped point (not-mapped):
+  (R)   2739  E    /mux_reg_out_1579_3611/g1/n16361
+Unmapped point (not-mapped):
+  (R)   2740  E    /mux_reg_out_1579_3611/g33/n16361
+Unmapped point (not-mapped):
+  (R)   2741  E    /mux_reg_out_1579_3611/g34/n16361
+Unmapped point (not-mapped):
+  (R)   2742  E    /mux_reg_out_1579_3611/g35/n16361
+Unmapped point (not-mapped):
+  (R)   2743  E    /mux_reg_out_1579_3611/g36/n16361
+Unmapped point (not-mapped):
+  (R)   2744  E    /mux_reg_out_1579_3611/g37/n16361
+Unmapped point (not-mapped):
+  (R)   2745  E    /mux_reg_out_1579_3611/g38/n16361
+Unmapped point (not-mapped):
+  (R)   2746  E    /mux_reg_out_1579_3611/g39/n16361
+Unmapped point (not-mapped):
+  (R)   2747  E    /mux_reg_out_1579_3611/g40/n16361
+Unmapped point (not-mapped):
+  (R)   2748  E    /mux_reg_out_1579_3611/g41/n16361
+Unmapped point (not-mapped):
+  (R)   2749  E    /mux_reg_out_1579_3611/g42/n16361
+Unmapped point (not-mapped):
+  (R)   2750  E    /mux_reg_out_1579_3611/g43/n16361
+Unmapped point (not-mapped):
+  (R)   2751  E    /mux_reg_out_1579_3611/g44/n16361
+Unmapped point (not-mapped):
+  (R)   2752  E    /mux_reg_out_1579_3611/g45/n16361
+Unmapped point (not-mapped):
+  (R)   2753  E    /mux_reg_out_1579_3611/g46/n16361
+Unmapped point (not-mapped):
+  (R)   2754  E    /mux_reg_out_1579_3611/g47/n16361
+Unmapped point (not-mapped):
+  (R)   2755  E    /mux_reg_out_1579_3611/g48/n16361
+Unmapped point (not-mapped):
+  (R)   2756  E    /mux_reg_out_1579_3611/g49/n16361
+Unmapped point (not-mapped):
+  (R)   2757  E    /mux_reg_out_1579_3611/g50/n16361
+Unmapped point (not-mapped):
+  (R)   2758  E    /mux_reg_out_1579_3611/g51/n16361
+Unmapped point (not-mapped):
+  (R)   2759  E    /mux_reg_out_1579_3611/g52/n16361
+Unmapped point (not-mapped):
+  (R)   2760  E    /mux_reg_out_1579_3611/g53/n16361
+Unmapped point (not-mapped):
+  (R)   2761  E    /mux_reg_out_1579_3611/g54/n16361
+Unmapped point (not-mapped):
+  (R)   2762  E    /mux_reg_out_1579_3611/g55/n16361
+Unmapped point (not-mapped):
+  (R)   2763  E    /mux_reg_out_1579_3611/g56/n16361
+Unmapped point (not-mapped):
+  (R)   2764  E    /mux_reg_out_1579_3611/g57/n16361
+Unmapped point (not-mapped):
+  (R)   2765  E    /mux_reg_out_1579_3611/g58/n16361
+Unmapped point (not-mapped):
+  (R)   2766  E    /mux_reg_out_1579_3611/g59/n16361
+Unmapped point (not-mapped):
+  (R)   2767  E    /mux_reg_out_1579_3611/g60/n16361
+Unmapped point (not-mapped):
+  (R)   2768  E    /mux_reg_out_1579_3611/g61/n16361
+Unmapped point (not-mapped):
+  (R)   2769  E    /mux_reg_out_1579_3611/g62/n16361
+Unmapped point (not-mapped):
+  (R)   2770  E    /mux_reg_out_1579_3611/g63/n16361
+Unmapped point (not-mapped):
+  (R)   2771  E    /mux_cpuregs_wrdata_1310_3612/g1/n16361
+Unmapped point (not-mapped):
+  (R)   2772  E    /mux_cpuregs_wrdata_1310_3612/g33/n16361
+Unmapped point (not-mapped):
+  (R)   2773  E    /mux_cpuregs_wrdata_1310_3612/g34/n16361
+Unmapped point (not-mapped):
+  (R)   2774  E    /mux_cpuregs_wrdata_1310_3612/g35/n16361
+Unmapped point (not-mapped):
+  (R)   2775  E    /mux_cpuregs_wrdata_1310_3612/g36/n16361
+Unmapped point (not-mapped):
+  (R)   2776  E    /mux_cpuregs_wrdata_1310_3612/g37/n16361
+Unmapped point (not-mapped):
+  (R)   2777  E    /mux_cpuregs_wrdata_1310_3612/g38/n16361
+Unmapped point (not-mapped):
+  (R)   2778  E    /mux_cpuregs_wrdata_1310_3612/g39/n16361
+Unmapped point (not-mapped):
+  (R)   2779  E    /mux_cpuregs_wrdata_1310_3612/g40/n16361
+Unmapped point (not-mapped):
+  (R)   2780  E    /mux_cpuregs_wrdata_1310_3612/g41/n16361
+Unmapped point (not-mapped):
+  (R)   2781  E    /mux_cpuregs_wrdata_1310_3612/g42/n16361
+Unmapped point (not-mapped):
+  (R)   2782  E    /mux_cpuregs_wrdata_1310_3612/g43/n16361
+Unmapped point (not-mapped):
+  (R)   2783  E    /mux_cpuregs_wrdata_1310_3612/g44/n16361
+Unmapped point (not-mapped):
+  (R)   2784  E    /mux_cpuregs_wrdata_1310_3612/g45/n16361
+Unmapped point (not-mapped):
+  (R)   2785  E    /mux_cpuregs_wrdata_1310_3612/g46/n16361
+Unmapped point (not-mapped):
+  (R)   2786  E    /mux_cpuregs_wrdata_1310_3612/g47/n16361
+Unmapped point (not-mapped):
+  (R)   2787  E    /mux_cpuregs_wrdata_1310_3612/g48/n16361
+Unmapped point (not-mapped):
+  (R)   2788  E    /mux_cpuregs_wrdata_1310_3612/g49/n16361
+Unmapped point (not-mapped):
+  (R)   2789  E    /mux_cpuregs_wrdata_1310_3612/g50/n16361
+Unmapped point (not-mapped):
+  (R)   2790  E    /mux_cpuregs_wrdata_1310_3612/g51/n16361
+Unmapped point (not-mapped):
+  (R)   2791  E    /mux_cpuregs_wrdata_1310_3612/g52/n16361
+Unmapped point (not-mapped):
+  (R)   2792  E    /mux_cpuregs_wrdata_1310_3612/g53/n16361
+Unmapped point (not-mapped):
+  (R)   2793  E    /mux_cpuregs_wrdata_1310_3612/g54/n16361
+Unmapped point (not-mapped):
+  (R)   2794  E    /mux_cpuregs_wrdata_1310_3612/g55/n16361
+Unmapped point (not-mapped):
+  (R)   2795  E    /mux_cpuregs_wrdata_1310_3612/g56/n16361
+Unmapped point (not-mapped):
+  (R)   2796  E    /mux_cpuregs_wrdata_1310_3612/g57/n16361
+Unmapped point (not-mapped):
+  (R)   2797  E    /mux_cpuregs_wrdata_1310_3612/g58/n16361
+Unmapped point (not-mapped):
+  (R)   2798  E    /mux_cpuregs_wrdata_1310_3612/g59/n16361
+Unmapped point (not-mapped):
+  (R)   2799  E    /mux_cpuregs_wrdata_1310_3612/g60/n16361
+Unmapped point (not-mapped):
+  (R)   2800  E    /mux_cpuregs_wrdata_1310_3612/g61/n16361
+Unmapped point (not-mapped):
+  (R)   2801  E    /mux_cpuregs_wrdata_1310_3612/g62/n16361
+Unmapped point (not-mapped):
+  (R)   2802  E    /mux_cpuregs_wrdata_1310_3612/g63/n16361
+Unmapped point (not-mapped):
+  (R)   2803  E    /logicX_inst/n16119
+
+565 unmapped points reported
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   E         Total   
+--------------------------------------------------------------------------------
+Not-mapped        565       565     
+================================================================================
+// Command: analyze_datapath -module -verbose
+// Note: Multithreaded module datapath analysis (MDP) is enabled
+// Warning: No eligible datapath module in the design. Skip ...
+// Command: analyze_datapath -verbose
+0
+CPU time     : 20.46   seconds
+Elapse time  : 32      seconds
+Memory usage : 450.69  M bytes
+// Command: add_compared_points -all
+// Command: add_compared_points -all
+// 2062 compared points added to compare list
+0
+// Command: compare -noneq_stop 1  -threads 1,4
+// Compare will stop on the 1st non-equivalent point
+================================================================================
+Compared points      PO     DFF    BBOX      Total   
+--------------------------------------------------------------------------------
+Equivalent           307    1753   2         2062    
+================================================================================
+CPU time     : 24.97   seconds
+Elapse time  : 37      seconds
+Memory usage : 450.69  M bytes
+// Command: analyze abort -compare
+There is no abort/specified point to be analyzed.
+// Command: save_hier_compare_result
+// Command: save_hier_compare_result
+0
+CPU time     : 25.20   seconds
+Elapse time  : 37      seconds
+Memory usage : 450.69  M bytes
+// Command: set_system_mode setup
+// Command: set_system_mode setup
+0
+// Command: usage
+// Command: usage
+CPU time     : 25.20   seconds
+Memory usage : 450.69  M bytes
+0
+Processed 3 out of 3 module pairs	EQ: 3	NEQ: 0	ABORT: 0
+
+================================================================================
+Module Comparison Results
+--------------------------------------------------------------------------------
+Equivalent                     3
+--------------------------------------------------------------------------------
+Total                          3
+--------------------------------------------------------------------------------
+Hierarchical compare : Equivalent 
+================================================================================
+0
+CPU time     : 25.31   seconds
+Elapse time  : 37      seconds
+Memory usage : 463.03  M bytes
+// Command: report_verification -hier -verbose
+================================================================================
+                            Verification Report
+--------------------------------------------------------------------------------
+Category                                                                  Count
+--------------------------------------------------------------------------------
+1. Non-standard modeling options used:                                      0
+     Tri-stated output:                                        checked
+     Revised X signals set to E:                               yes
+     Floating signals tied to Z:                               yes
+     Command "add clock" for clock-gating:                     not used
+--------------------------------------------------------------------------------
+2. Incomplete verification:                                                 1
+     All primary outputs are mapped:                           yes
+     Not-mapped DFF/DLAT is detected:                          no
+     All mapped points are added as compare points:            yes
+     All compared points are compared:                         yes
+     User added black box:                                     no
+     Black box mapped with different module name:              no
+     Empty module is not black boxed:                          no
+     Command "add ignore outputs" used:                        yes *
+     Always false constraints detected:                        no
+     Verified pin-equivalent outputs are unmapped:             no
+--------------------------------------------------------------------------------
+3. User modification to design:                                             0
+     Change gate type:                                         no
+     Change wire:                                              no
+     Primary input added by user:                              no
+--------------------------------------------------------------------------------
+4. Conformal Constraint Designer clock domain crossing checks recommended:  2
+     RTL5.1 Overlapped case items in parallel case statement:  used *
+     RTL5.4 Partial case items in full case statement:         used *
+     Multiple clocks in the design:                            no
+--------------------------------------------------------------------------------
+5. Design ambiguity:                                                        0
+     Duplicate module definition:                              no
+     Black box due to undefined cells:                         no
+     Golden design has abnormal ratio of unreachable gates:    no
+     Ratio of golden unreachable gates:                        0%
+     Revised design has abnormal ratio of unreachable gates:   no
+     Ratio of revised unreachable gates:                       0%
+     All primary input bus ordering is consistent:             yes
+     All primary output bus ordering is consistent:            yes
+--------------------------------------------------------------------------------
+6. Compare Results:                                                        PASS
+     Total Equivalent modules  = 3
+================================================================================
+pass
+// Command: write_verification_information
+// Verification information is written to rtl_post_elabv_db.
+0
+// Command: report_verification_information
+// Generating reports on verification information at /mnt/scratch_b/users/g/grigpavl/project-asic-2022/rtl_post_elabv_db...
+LEC run scores:
+================================================================================
+Step                Score     Range          
+--------------------------------------------------------------------------------
+result_status       10        10             
+runtime             10        10             
+mapping             10        10             
+sequential_constant 10        10             
+sequential_merge    5         10             
+sequential_phase    10        10             
+datapath_analysis   10        10             
+combinational_loop  5         10             
+mismatch_detection  5         10             
+overall             75        90             
+================================================================================
+LEC results versus attributes:
+================================================================================
+Attribute           Total     Inconsistency  Combined Table                
+--------------------------------------------------------------------------------
+sequential_constant 4         0              sequential_constant.json      
+sequential_merge    0         0                                            
+sequential_phase    2087      0              sequential_phase.json         
+================================================================================
+The tables can be viewed directly using web interface.
+// Done with reporting verification information.
+0
+// Command: set lec_version_required "18.20330"
+18.20330
+// Command: if {$lec_version >= $lec_version_required} {
+//              report_implementation_information
+//          }
+// Command: report_implementation_information
+// Reporting implementation information...
+// Information summary:
+================================================================================
+          Information Category       Total        Used      Unused    Rejected
+--------------------------------------------------------------------------------
+     Sequential instance phase        2090           0        2090           0
+           Sequential constant           0           0           0           0
+              Sequential merge           0           0           0           0
+        Sequential unreachable          36           0          36           0
+        Sequential duplication           0           0           0           0
+         Boundary optimization           0           0           0           0
+            Synthesis equation           1           1           0           0
+    Combinational loop breaker           0           0           0           0
+================================================================================
+0
+// Command: set_system_mode lec
+0
+// Command: puts "No of compare points = [get_compare_points -count]"
+// Command: get_compare_points -count
+No of compare points = 2062
+// Command: puts "No of diff points    = [get_compare_points -NONequivalent -count]"
+// Command: get_compare_points -NONequivalent -count
+No of diff points    = 0
+// Command: puts "No of abort points   = [get_compare_points -abort -count]"
+// Command: get_compare_points -abort -count
+No of abort points   = 0
+// Command: puts "No of unknown points = [get_compare_points -unknown -count]"
+// Command: get_compare_points -unknown -count
+No of unknown points = 0
+// Command: if {[get_compare_points -count] == 0} {
+//              puts "---------------------------------"
+//              puts "ERROR: No compare points detected"
+//              puts "---------------------------------"
+//          }
+// Command: get_compare_points -count
+// Command: if {[get_compare_points -NONequivalent -count] > 0} {
+//              puts "------------------------------------"
+//              puts "ERROR: Different Key Points detected"
+//              puts "------------------------------------"
+//          }
+// Command: get_compare_points -NONequivalent -count
+// Command: if {[get_compare_points -abort -count] > 0} {
+//              puts "-----------------------------"
+//              puts "ERROR: Abort Points detected "
+//              puts "-----------------------------"
+//          }
+// Command: get_compare_points -abort -count
+// Command: if {[get_compare_points -unknown -count] > 0} {
+//              puts "----------------------------------"
+//              puts "ERROR: Unknown Key Points detected"
+//              puts "----------------------------------"
+//          }
+// Command: get_compare_points -unknown -count
+// Command: vpxmode
+// Command: exit -f
